@@ -15,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('plans');
+})->name('plans');
+
+Route::get('plans/free', function (){
+    return view('plans/free');
 });

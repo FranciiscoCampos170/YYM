@@ -2089,6 +2089,185 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FreePlanComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FreePlanComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PlansComponent.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PlansComponent.vue?vue&type=script&lang=js& ***!
@@ -2330,6 +2509,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('plans-component', __webpack_require__(/*! ./components/PlansComponent.vue */ "./resources/js/components/PlansComponent.vue")["default"]);
+Vue.component('free-plan-component', __webpack_require__(/*! ./components/FreePlanComponent.vue */ "./resources/js/components/FreePlanComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -37808,6 +37988,45 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/FreePlanComponent.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/FreePlanComponent.vue ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _FreePlanComponent_vue_vue_type_template_id_64997c26___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FreePlanComponent.vue?vue&type=template&id=64997c26& */ "./resources/js/components/FreePlanComponent.vue?vue&type=template&id=64997c26&");
+/* harmony import */ var _FreePlanComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FreePlanComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/FreePlanComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FreePlanComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FreePlanComponent_vue_vue_type_template_id_64997c26___WEBPACK_IMPORTED_MODULE_0__.render,
+  _FreePlanComponent_vue_vue_type_template_id_64997c26___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/FreePlanComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/PlansComponent.vue":
 /*!****************************************************!*\
   !*** ./resources/js/components/PlansComponent.vue ***!
@@ -37863,6 +38082,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/FreePlanComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/FreePlanComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FreePlanComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FreePlanComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FreePlanComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FreePlanComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/PlansComponent.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************!*\
   !*** ./resources/js/components/PlansComponent.vue?vue&type=script&lang=js& ***!
@@ -37892,6 +38127,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/FreePlanComponent.vue?vue&type=template&id=64997c26&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/FreePlanComponent.vue?vue&type=template&id=64997c26& ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FreePlanComponent_vue_vue_type_template_id_64997c26___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FreePlanComponent_vue_vue_type_template_id_64997c26___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FreePlanComponent_vue_vue_type_template_id_64997c26___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FreePlanComponent.vue?vue&type=template&id=64997c26& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FreePlanComponent.vue?vue&type=template&id=64997c26&");
 
 
 /***/ }),
@@ -37961,6 +38213,413 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FreePlanComponent.vue?vue&type=template&id=64997c26&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FreePlanComponent.vue?vue&type=template&id=64997c26& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "main",
+    { staticClass: "main pt-0", attrs: { id: "content", role: "main" } },
+    [
+      _c("div", { staticClass: "container-fluid px-3" }, [
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-lg-6 d-none d-lg-flex justify-content-center align-items-center min-vh-lg-100 position-relative bg-light px-0"
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "position-absolute top-0 left-0 right-0 mt-3 mx-3"
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "d-none d-lg-flex justify-content-between" },
+                    [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          staticClass: "w-100",
+                          staticStyle: {
+                            "min-width": "7rem",
+                            "max-width": "7rem"
+                          },
+                          attrs: {
+                            src: "/img/YNZO-08.png",
+                            alt: "Image Description"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(0)
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _vm._m(1)
+            ]
+          ),
+          _vm._v(" "),
+          _vm._m(2)
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "select2-custom select2-custom-right",
+        attrs: { id: "languageSelect1" }
+      },
+      [
+        _c(
+          "select",
+          {
+            staticClass: "js-select2-custom",
+            attrs: {
+              "data-hs-select2-options":
+                '{\n                        "dropdownParent": "#languageSelect1",\n                        "minimumResultsForSearch": "Infinity",\n                        "placeholder": "Select language",\n                        "customClass": "custom-select custom-select-sm custom-select-borderless bg-transparent",\n                        "dropdownAutoWidth": true,\n                        "dropdownWidth": "12rem"\n                      }'
+            }
+          },
+          [
+            _c("option", { attrs: { label: "empty" } }),
+            _vm._v(" "),
+            _c(
+              "option",
+              {
+                attrs: {
+                  value: "language1",
+                  selected: "",
+                  "data-option-template":
+                    '<span class="d-flex align-items-center">\n                                    <img class="avatar avatar-xss avatar-circle mr-2" src="/flag-icon-css/flags/1x1/pt.svg" alt="Image description" width="16"/><span>Português (PT)</span></span>'
+                }
+              },
+              [_vm._v("Português (PT)")]
+            ),
+            _vm._v(" "),
+            _c(
+              "option",
+              {
+                attrs: {
+                  value: "language2",
+                  "data-option-template":
+                    '<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle mr-2" src="/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/><span>English (US)</span></span>'
+                }
+              },
+              [_vm._v("English (US)")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticStyle: { "max-width": "23rem" } }, [
+      _c("div", { staticClass: "text-center mb-5" }, [
+        _c("img", {
+          staticClass: "img-fluid",
+          staticStyle: { width: "12rem" },
+          attrs: {
+            src: "/svg/illustrations/chat.svg",
+            alt: "Image Description"
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-5" }, [
+        _c("h2", { staticClass: "display-4" }, [
+          _vm._v("Build digital products with:")
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "ul",
+        {
+          staticClass:
+            "list-checked list-checked-lg list-checked-primary list-unstyled-py-4"
+        },
+        [
+          _c("li", { staticClass: "list-checked-item" }, [
+            _c("span", { staticClass: "d-block font-weight-bold mb-1" }, [
+              _vm._v("Reunião com duração de 45 Minutos")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "list-checked-item" }, [
+            _c("span", { staticClass: "d-block font-weight-bold mb-1" }, [
+              _vm._v("Pode adicionar até 15 participantes")
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-between mt-5 gx-2" }, [
+        _c("div", { staticClass: "col" }, [
+          _c("img", {
+            staticClass: "img-fluid",
+            attrs: {
+              src: "/svg/brands/gitlab-gray.svg",
+              alt: "Image Description"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col" }, [
+          _c("img", {
+            staticClass: "img-fluid",
+            attrs: {
+              src: "/svg/brands/fitbit-gray.svg",
+              alt: "Image Description"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col" }, [
+          _c("img", {
+            staticClass: "img-fluid",
+            attrs: {
+              src: "/svg/brands/flow-xo-gray.svg",
+              alt: "Image Description"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col" }, [
+          _c("img", {
+            staticClass: "img-fluid",
+            attrs: {
+              src: "/svg/brands/layar-gray.svg",
+              alt: "Image Description"
+            }
+          })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "col-lg-6 d-flex justify-content-center align-items-center min-vh-lg-100"
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "w-100 pt-10 pt-lg-7 pb-7",
+            staticStyle: { "max-width": "25rem" }
+          },
+          [
+            _c("form", { staticClass: "js-validate" }, [
+              _c("div", { staticClass: "text-center mb-5" }, [
+                _c("h1", { staticClass: "display-4" }, [
+                  _vm._v("Teste grátis o Ynzo")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "js-form-message form-group" }, [
+                _c("input", {
+                  staticClass: "form-control form-control-lg",
+                  attrs: {
+                    type: "text",
+                    name: "title",
+                    id: "",
+                    placeholder: "Digite o titulo da reunião",
+                    "aria-label": "Digite o titulo da reunião",
+                    required: "",
+                    "data-msg": "Porfavor digite um titulo valido"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "js-form-message form-group" }, [
+                _c("input", {
+                  staticClass: "form-control form-control-lg",
+                  attrs: {
+                    type: "name",
+                    name: "name",
+                    id: "",
+                    placeholder: "Digite o seu nome e sobrenome",
+                    "aria-label": "Digite o seu nome e sobrenome",
+                    required: "",
+                    "data-msg": "Porfavor digite um nome e sobrenome valido"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "js-form-message form-group" }, [
+                _c("input", {
+                  staticClass: "form-control form-control-lg",
+                  attrs: {
+                    type: "tel",
+                    name: "phone",
+                    id: "",
+                    placeholder: "Telefone",
+                    "aria-label": "Telefone",
+                    required: "",
+                    "data-msg": "Porfavor digite um Telefone e sobrenome valido"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "js-form-message form-group" }, [
+                _c("input", {
+                  staticClass: "form-control form-control-lg",
+                  attrs: {
+                    type: "email",
+                    name: "email",
+                    id: "",
+                    placeholder: "Digite o seu melhor e-mail",
+                    "aria-label": "Email",
+                    required: "",
+                    "data-msg": "Porfavor digite um Email e sobrenome valido"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "js-form-message form-group",
+                  attrs: { hidden: "" }
+                },
+                [
+                  _c("input", {
+                    staticClass: "form-control form-control-lg",
+                    attrs: {
+                      type: "text",
+                      name: "email",
+                      id: "",
+                      placeholder: "Digite o seu melhor e-mail",
+                      "aria-label": "Email",
+                      required: "",
+                      "data-msg": "Porfavor digite um Email e sobrenome valido"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "js-form-message form-group",
+                  attrs: { hidden: "" }
+                },
+                [
+                  _c("input", {
+                    staticClass: "form-control form-control-lg",
+                    attrs: {
+                      type: "text",
+                      name: "email",
+                      id: "",
+                      placeholder: "Digite o seu melhor e-mail",
+                      "aria-label": "Email",
+                      required: "",
+                      "data-msg": "Porfavor digite um Email e sobrenome valido"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "js-form-message form-group",
+                  attrs: { hidden: "" }
+                },
+                [
+                  _c("input", {
+                    staticClass: "form-control form-control-lg",
+                    attrs: {
+                      type: "text",
+                      name: "email",
+                      id: "",
+                      placeholder: "Digite o seu melhor e-mail",
+                      "aria-label": "Email",
+                      required: "",
+                      "data-msg": "Porfavor digite um Email e sobrenome valido"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-8" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-sm btn-block btn-outline-success",
+                      attrs: { type: "submit" }
+                    },
+                    [
+                      _c("span", { staticClass: "icon" }, [
+                        _c("i", { staticClass: "tio-copy" })
+                      ]),
+                      _vm._v(
+                        "\n                                    Copiar link da reunião\n                                "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-4" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-sm btn-block btn-primary",
+                      attrs: { type: "submit" }
+                    },
+                    [
+                      _c("span", { staticClass: "icon" }, [
+                        _c("i", { staticClass: "tio-play-circle" })
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PlansComponent.vue?vue&type=template&id=4ea0d35e&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PlansComponent.vue?vue&type=template&id=4ea0d35e& ***!
@@ -38016,7 +38675,49 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _vm._m(2)
+    _c("div", { staticClass: "container mt--8 pb-5" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-4 col-md-12 col-sm-12 col-xs-12" }, [
+          _c("div", { staticClass: "card bg-secondary border-0 mb-0" }, [
+            _c("div", { staticClass: "card-body px-lg-5 py-lg-5" }, [
+              _c(
+                "h5",
+                {
+                  staticClass:
+                    "card-title text-muted text-uppercase text-center"
+                },
+                [_vm._v("Gratuito")]
+              ),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _c("div", [
+                _c("hr"),
+                _vm._v(" "),
+                _vm._m(4),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-block btn-primary text-uppercase",
+                    attrs: { href: "/plans/free" }
+                  },
+                  [_vm._v("Testar grátis")]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("br")
+        ]),
+        _vm._v(" "),
+        _vm._m(5),
+        _vm._v(" "),
+        _vm._m(6)
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -38223,404 +38924,380 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container mt--8 pb-5" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-4 col-md-12 col-sm-12 col-xs-12" }, [
-          _c("div", { staticClass: "card bg-secondary border-0 mb-0" }, [
-            _c("div", { staticClass: "card-body px-lg-5 py-lg-5" }, [
-              _c(
-                "h5",
-                {
-                  staticClass:
-                    "card-title text-muted text-uppercase text-center"
-                },
-                [_vm._v("Gratuito")]
-              ),
-              _vm._v(" "),
-              _c(
-                "h6",
-                {
-                  staticClass: "card-price text-center",
-                  staticStyle: { "font-size": "22pt" }
-                },
-                [
-                  _vm._v("0 kz"),
-                  _c("span", { staticClass: "period" }, [_vm._v("/mês")])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "text-center text-muted mb-4" }, [
-                _c("small", [_vm._v("(*Sem custos | Para reuniões rápidas)")])
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("hr"),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  {
-                    staticClass: "fa-ul",
-                    staticStyle: { "font-size": "11pt" }
-                  },
-                  [
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v("15 Participantes")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v("Duração de 45 minutos")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v("1 Sala de Reunião")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v("Transmição para Redes Sociais")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "text-muted pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _c("del", [_vm._v("Gravações")])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "text-muted pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _c("del", [
-                        _vm._v(
-                          "+ 90 Participantes por\n                                Reunião"
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "text-muted pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _c("del", [_vm._v("Convite e Agendamento")])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "text-muted pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _c("del", [_vm._v("Gestão de Arquivos")])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "text-muted pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _c("del", [_vm._v("Adicionar Colaboradores")])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "text-muted" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _c("del", [
-                        _vm._v(
-                          "Integração com Ambiente de\n                                Aprendizagem"
-                        )
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-block btn-primary text-uppercase",
-                    attrs: { href: "" }
-                  },
-                  [_vm._v("Testar grátis")]
-                )
-              ])
-            ])
+    return _c(
+      "h6",
+      {
+        staticClass: "card-price text-center",
+        staticStyle: { "font-size": "22pt" }
+      },
+      [_vm._v("0 kz"), _c("span", { staticClass: "period" }, [_vm._v("/mês")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center text-muted mb-4" }, [
+      _c("small", [_vm._v("(*Sem custos | Para reuniões rápidas)")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      { staticClass: "fa-ul", staticStyle: { "font-size": "11pt" } },
+      [
+        _c("li", { staticClass: "pb-3" }, [
+          _c("span", { staticClass: "fa-li" }, [
+            _c("i", { staticClass: "fas fa-check" })
           ]),
-          _vm._v(" "),
-          _c("br")
+          _vm._v("15 Participantes")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-4 col-md-12 col-sm-12 col-xs-12" }, [
-          _c("div", { staticClass: "card bg-secondary border-0 mb-0" }, [
-            _c("div", { staticClass: "card-body px-lg-5 py-lg-5" }, [
-              _c(
-                "h5",
-                {
-                  staticClass:
-                    "card-title text-muted text-uppercase text-center"
-                },
-                [_vm._v("Premium")]
-              ),
-              _vm._v(" "),
-              _c(
-                "h6",
-                {
-                  staticClass: "card-price text-center",
-                  staticStyle: { "font-size": "22pt" }
-                },
-                [
-                  _vm._v("7000 kz"),
-                  _c("span", { staticClass: "period" }, [_vm._v("/mês")])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "text-center text-muted mb-4" }, [
-                _c("small", [_vm._v("(*84.000 AOA/Ano | Para empresas)")])
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("hr"),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  {
-                    staticClass: "fa-ul",
-                    staticStyle: { "font-size": "11pt" }
-                  },
-                  [
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v("Painel do Utilizador")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v("Duração Ilimitada")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v("+ 1 Sala de Reunião")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v("Transmição para Redes Sociais")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _vm._v("Gravações")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _vm._v(
-                        "+ 90 Participantes por\n                                Reunião"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _vm._v("Convite e Agendamento")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _vm._v("Gestão de Arquivos\n                            ")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _vm._v(
-                        "Adicionar Colaboradores\n                            "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "text-muted" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _c("del", [
-                        _vm._v(
-                          "Integração com Ambiente de\n                                Aprendizagem"
-                        )
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-block btn-primary text-uppercase",
-                    attrs: { href: "" }
-                  },
-                  [_vm._v("Contratar")]
-                )
-              ])
-            ])
+        _c("li", { staticClass: "pb-3" }, [
+          _c("span", { staticClass: "fa-li" }, [
+            _c("i", { staticClass: "fas fa-check" })
           ]),
-          _vm._v(" "),
-          _c("br")
+          _vm._v("Duração de 45 minutos")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-4 col-md-12 col-sm-12 col-xs-12 " }, [
-          _c("div", { staticClass: "card bg-secondary border-0 mb-0" }, [
-            _c("div", { staticClass: "card-body px-lg-5 py-lg-5" }, [
-              _c(
-                "h5",
-                {
-                  staticClass:
-                    "card-title text-muted text-uppercase text-center"
-                },
-                [_vm._v("Escolar")]
-              ),
+        _c("li", { staticClass: "pb-3" }, [
+          _c("span", { staticClass: "fa-li" }, [
+            _c("i", { staticClass: "fas fa-check" })
+          ]),
+          _vm._v("1 Sala de Reunião")
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "pb-3" }, [
+          _c("span", { staticClass: "fa-li" }, [
+            _c("i", { staticClass: "fas fa-check" })
+          ]),
+          _vm._v("Transmição para Redes Sociais")
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "text-muted pb-3" }, [
+          _c("span", { staticClass: "fa-li" }, [
+            _c("i", { staticClass: "fas fa-times" })
+          ]),
+          _c("del", [_vm._v("Gravações")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "text-muted pb-3" }, [
+          _c("span", { staticClass: "fa-li" }, [
+            _c("i", { staticClass: "fas fa-times" })
+          ]),
+          _c("del", [
+            _vm._v(
+              "+ 90 Participantes por\n                                Reunião"
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "text-muted pb-3" }, [
+          _c("span", { staticClass: "fa-li" }, [
+            _c("i", { staticClass: "fas fa-times" })
+          ]),
+          _c("del", [_vm._v("Convite e Agendamento")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "text-muted pb-3" }, [
+          _c("span", { staticClass: "fa-li" }, [
+            _c("i", { staticClass: "fas fa-times" })
+          ]),
+          _c("del", [_vm._v("Gestão de Arquivos")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "text-muted pb-3" }, [
+          _c("span", { staticClass: "fa-li" }, [
+            _c("i", { staticClass: "fas fa-times" })
+          ]),
+          _c("del", [_vm._v("Adicionar Colaboradores")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "text-muted" }, [
+          _c("span", { staticClass: "fa-li" }, [
+            _c("i", { staticClass: "fas fa-times" })
+          ]),
+          _c("del", [
+            _vm._v(
+              "Integração com Ambiente de\n                                Aprendizagem"
+            )
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-lg-4 col-md-12 col-sm-12 col-xs-12" },
+      [
+        _c("div", { staticClass: "card bg-secondary border-0 mb-0" }, [
+          _c("div", { staticClass: "card-body px-lg-5 py-lg-5" }, [
+            _c(
+              "h5",
+              {
+                staticClass: "card-title text-muted text-uppercase text-center"
+              },
+              [_vm._v("Premium")]
+            ),
+            _vm._v(" "),
+            _c(
+              "h6",
+              {
+                staticClass: "card-price text-center",
+                staticStyle: { "font-size": "22pt" }
+              },
+              [
+                _vm._v("7000 kz"),
+                _c("span", { staticClass: "period" }, [_vm._v("/mês")])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-center text-muted mb-4" }, [
+              _c("small", [_vm._v("(*84.000 AOA/Ano | Para empresas)")])
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("hr"),
               _vm._v(" "),
               _c(
-                "h6",
-                {
-                  staticClass: "card-price text-center",
-                  staticStyle: { "font-size": "22pt" }
-                },
+                "ul",
+                { staticClass: "fa-ul", staticStyle: { "font-size": "11pt" } },
                 [
-                  _vm._v("5400 kz"),
-                  _c("span", { staticClass: "period" }, [_vm._v("/mês")])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "text-center text-muted mb-4" }, [
-                _c("small", [_vm._v("(*64.800 AOA/Ano | Para o ensino)")])
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("hr"),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  {
-                    staticClass: "fa-ul",
-                    staticStyle: { "font-size": "11pt" }
-                  },
-                  [
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v("Painel do Utilizador")
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-check" })
                     ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v("Duração Ilimitada")
+                    _vm._v("Painel do Utilizador")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-check" })
                     ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v("+ 1 Sala de Reunião")
+                    _vm._v("Duração Ilimitada")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-check" })
                     ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v("Transmição para Redes Sociais")
+                    _vm._v("+ 1 Sala de Reunião")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-check" })
                     ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _vm._v("Gravações")
+                    _vm._v("Transmição para Redes Sociais")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-times" })
                     ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _vm._v(
-                        "+ 90 Participantes por\n                                Reunião"
-                      )
+                    _vm._v("Gravações")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-times" })
                     ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _vm._v("Convite e Agendamento")
+                    _vm._v(
+                      "+ 90 Participantes por\n                                Reunião"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-times" })
                     ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _vm._v("Gestão de Arquivos\n                            ")
+                    _vm._v("Convite e Agendamento")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-times" })
                     ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "pb-3" }, [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
-                      _vm._v(
-                        "Adicionar Colaboradores\n                            "
-                      )
+                    _vm._v("Gestão de Arquivos\n                            ")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-times" })
                     ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("span", { staticClass: "fa-li" }, [
-                        _c("i", { staticClass: "fas fa-times" })
-                      ]),
+                    _vm._v(
+                      "Adicionar Colaboradores\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "text-muted" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-times" })
+                    ]),
+                    _c("del", [
                       _vm._v(
                         "Integração com Ambiente de\n                                Aprendizagem"
                       )
                     ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-block btn-primary text-uppercase",
-                    attrs: { href: "" }
-                  },
-                  [_vm._v("Contratar")]
-                )
-              ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-block btn-primary text-uppercase",
+                  attrs: { href: "" }
+                },
+                [_vm._v("Contratar")]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-lg-4 col-md-12 col-sm-12 col-xs-12 " },
+      [
+        _c("div", { staticClass: "card bg-secondary border-0 mb-0" }, [
+          _c("div", { staticClass: "card-body px-lg-5 py-lg-5" }, [
+            _c(
+              "h5",
+              {
+                staticClass: "card-title text-muted text-uppercase text-center"
+              },
+              [_vm._v("Escolar")]
+            ),
+            _vm._v(" "),
+            _c(
+              "h6",
+              {
+                staticClass: "card-price text-center",
+                staticStyle: { "font-size": "22pt" }
+              },
+              [
+                _vm._v("5400 kz"),
+                _c("span", { staticClass: "period" }, [_vm._v("/mês")])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-center text-muted mb-4" }, [
+              _c("small", [_vm._v("(*64.800 AOA/Ano | Para o ensino)")])
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("hr"),
+              _vm._v(" "),
+              _c(
+                "ul",
+                { staticClass: "fa-ul", staticStyle: { "font-size": "11pt" } },
+                [
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-check" })
+                    ]),
+                    _vm._v("Painel do Utilizador")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-check" })
+                    ]),
+                    _vm._v("Duração Ilimitada")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-check" })
+                    ]),
+                    _vm._v("+ 1 Sala de Reunião")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-check" })
+                    ]),
+                    _vm._v("Transmição para Redes Sociais")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-times" })
+                    ]),
+                    _vm._v("Gravações")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-times" })
+                    ]),
+                    _vm._v(
+                      "+ 90 Participantes por\n                                Reunião"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-times" })
+                    ]),
+                    _vm._v("Convite e Agendamento")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-times" })
+                    ]),
+                    _vm._v("Gestão de Arquivos\n                            ")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "pb-3" }, [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-times" })
+                    ]),
+                    _vm._v(
+                      "Adicionar Colaboradores\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("span", { staticClass: "fa-li" }, [
+                      _c("i", { staticClass: "fas fa-times" })
+                    ]),
+                    _vm._v(
+                      "Integração com Ambiente de\n                                Aprendizagem"
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-block btn-primary text-uppercase",
+                  attrs: { href: "" }
+                },
+                [_vm._v("Contratar")]
+              )
             ])
           ])
         ])
-      ])
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true
