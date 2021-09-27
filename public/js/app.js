@@ -2260,9 +2260,56 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      title: "",
+      name: "",
+      phone: "",
+      email: "",
+      url: "free/create",
+      limitParticipants: "",
+      timeLimit: "",
+      link: ""
+    };
+  },
   mounted: function mounted() {
-    console.log('Component mounted.');
+    this.create();
+  },
+  methods: {
+    create: function create() {
+      var _this = this;
+
+      var $this = this;
+      axios.get(this.url).then(function (response) {
+        _this.limitParticipants = response.data.limitParticipants, _this.timeLimit = response.data.timeLimit, _this.link = response.data.link;
+      });
+    },
+    copyToClipboard: function copyToClipboard() {
+      var text = document.getElementById("link");
+      text.select();
+      document.execCommand("copy");
+    },
+    submitMeeting: function submitMeeting(e) {
+      e.preventDefault();
+      axios.post('free/store', {
+        title: this.title,
+        name: this.name,
+        phone: this.phone,
+        email: this.email,
+        limitParticipants: this.limitParticipants,
+        timeLimit: this.timeLimit,
+        link: this.link
+      });
+    }
   }
 });
 
@@ -38277,7 +38324,282 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _vm._m(2)
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-lg-6 d-flex justify-content-center align-items-center min-vh-lg-100"
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "w-100 pt-10 pt-lg-7 pb-7",
+                  staticStyle: { "max-width": "25rem" }
+                },
+                [
+                  _c(
+                    "form",
+                    {
+                      staticClass: "js-validate",
+                      on: { submit: _vm.submitMeeting }
+                    },
+                    [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "js-form-message form-group" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.title,
+                              expression: "title"
+                            }
+                          ],
+                          staticClass: "form-control form-control-lg",
+                          attrs: {
+                            type: "text",
+                            name: "title",
+                            id: "",
+                            placeholder: "Digite o titulo da reunião",
+                            "aria-label": "Digite o titulo da reunião",
+                            required: "",
+                            "data-msg": "Porfavor digite um titulo valido"
+                          },
+                          domProps: { value: _vm.title },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.title = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "js-form-message form-group" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.name,
+                              expression: "name"
+                            }
+                          ],
+                          staticClass: "form-control form-control-lg",
+                          attrs: {
+                            type: "name",
+                            name: "name",
+                            id: "",
+                            placeholder: "Digite o seu nome e sobrenome",
+                            "aria-label": "Digite o seu nome e sobrenome",
+                            required: "",
+                            "data-msg":
+                              "Porfavor digite um nome e sobrenome valido"
+                          },
+                          domProps: { value: _vm.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.name = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "js-form-message form-group" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.phone,
+                              expression: "phone"
+                            }
+                          ],
+                          staticClass: "form-control form-control-lg",
+                          attrs: {
+                            type: "tel",
+                            name: "phone",
+                            id: "",
+                            placeholder: "Telefone",
+                            "aria-label": "Telefone",
+                            required: "",
+                            "data-msg":
+                              "Porfavor digite um Telefone e sobrenome valido"
+                          },
+                          domProps: { value: _vm.phone },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.phone = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "js-form-message form-group" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.email,
+                              expression: "email"
+                            }
+                          ],
+                          staticClass: "form-control form-control-lg",
+                          attrs: {
+                            type: "email",
+                            name: "email",
+                            id: "",
+                            placeholder: "Digite o seu melhor e-mail",
+                            "aria-label": "Email",
+                            required: "",
+                            "data-msg":
+                              "Porfavor digite um Email e sobrenome valido"
+                          },
+                          domProps: { value: _vm.email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.email = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "js-form-message form-group",
+                          attrs: { hidden: "" }
+                        },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.limitParticipants,
+                                expression: "limitParticipants"
+                              }
+                            ],
+                            staticClass: "form-control form-control-lg",
+                            attrs: {
+                              type: "text",
+                              name: "limitParticipants",
+                              id: ""
+                            },
+                            domProps: { value: _vm.limitParticipants },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.limitParticipants = $event.target.value
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "js-form-message form-group",
+                          attrs: { hidden: "" }
+                        },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.timeLimit,
+                                expression: "timeLimit"
+                              }
+                            ],
+                            staticClass: "form-control form-control-lg",
+                            attrs: { type: "text", name: "timeLimit", id: "" },
+                            domProps: { value: _vm.timeLimit },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.timeLimit = $event.target.value
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "js-form-message form-group" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.link,
+                              expression: "link"
+                            }
+                          ],
+                          staticClass: "form-control form-control-lg",
+                          attrs: {
+                            type: "text",
+                            name: "link",
+                            id: "link",
+                            readonly: ""
+                          },
+                          domProps: { value: _vm.link },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.link = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-8" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-sm btn-block btn-outline-success",
+                              attrs: { type: "button" },
+                              on: { click: _vm.copyToClipboard }
+                            },
+                            [
+                              _vm._m(3),
+                              _vm._v(
+                                "\n                                    Copiar link da reunião\n                                "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(4)
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
         ])
       ])
     ]
@@ -38426,192 +38748,36 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "col-lg-6 d-flex justify-content-center align-items-center min-vh-lg-100"
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass: "w-100 pt-10 pt-lg-7 pb-7",
-            staticStyle: { "max-width": "25rem" }
-          },
-          [
-            _c("form", { staticClass: "js-validate" }, [
-              _c("div", { staticClass: "text-center mb-5" }, [
-                _c("h1", { staticClass: "display-4" }, [
-                  _vm._v("Teste grátis o Ynzo")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "js-form-message form-group" }, [
-                _c("input", {
-                  staticClass: "form-control form-control-lg",
-                  attrs: {
-                    type: "text",
-                    name: "title",
-                    id: "",
-                    placeholder: "Digite o titulo da reunião",
-                    "aria-label": "Digite o titulo da reunião",
-                    required: "",
-                    "data-msg": "Porfavor digite um titulo valido"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "js-form-message form-group" }, [
-                _c("input", {
-                  staticClass: "form-control form-control-lg",
-                  attrs: {
-                    type: "name",
-                    name: "name",
-                    id: "",
-                    placeholder: "Digite o seu nome e sobrenome",
-                    "aria-label": "Digite o seu nome e sobrenome",
-                    required: "",
-                    "data-msg": "Porfavor digite um nome e sobrenome valido"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "js-form-message form-group" }, [
-                _c("input", {
-                  staticClass: "form-control form-control-lg",
-                  attrs: {
-                    type: "tel",
-                    name: "phone",
-                    id: "",
-                    placeholder: "Telefone",
-                    "aria-label": "Telefone",
-                    required: "",
-                    "data-msg": "Porfavor digite um Telefone e sobrenome valido"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "js-form-message form-group" }, [
-                _c("input", {
-                  staticClass: "form-control form-control-lg",
-                  attrs: {
-                    type: "email",
-                    name: "email",
-                    id: "",
-                    placeholder: "Digite o seu melhor e-mail",
-                    "aria-label": "Email",
-                    required: "",
-                    "data-msg": "Porfavor digite um Email e sobrenome valido"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "js-form-message form-group",
-                  attrs: { hidden: "" }
-                },
-                [
-                  _c("input", {
-                    staticClass: "form-control form-control-lg",
-                    attrs: {
-                      type: "text",
-                      name: "email",
-                      id: "",
-                      placeholder: "Digite o seu melhor e-mail",
-                      "aria-label": "Email",
-                      required: "",
-                      "data-msg": "Porfavor digite um Email e sobrenome valido"
-                    }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "js-form-message form-group",
-                  attrs: { hidden: "" }
-                },
-                [
-                  _c("input", {
-                    staticClass: "form-control form-control-lg",
-                    attrs: {
-                      type: "text",
-                      name: "email",
-                      id: "",
-                      placeholder: "Digite o seu melhor e-mail",
-                      "aria-label": "Email",
-                      required: "",
-                      "data-msg": "Porfavor digite um Email e sobrenome valido"
-                    }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "js-form-message form-group",
-                  attrs: { hidden: "" }
-                },
-                [
-                  _c("input", {
-                    staticClass: "form-control form-control-lg",
-                    attrs: {
-                      type: "text",
-                      name: "email",
-                      id: "",
-                      placeholder: "Digite o seu melhor e-mail",
-                      "aria-label": "Email",
-                      required: "",
-                      "data-msg": "Porfavor digite um Email e sobrenome valido"
-                    }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-8" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-sm btn-block btn-outline-success",
-                      attrs: { type: "submit" }
-                    },
-                    [
-                      _c("span", { staticClass: "icon" }, [
-                        _c("i", { staticClass: "tio-copy" })
-                      ]),
-                      _vm._v(
-                        "\n                                    Copiar link da reunião\n                                "
-                      )
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-4" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-sm btn-block btn-primary",
-                      attrs: { type: "submit" }
-                    },
-                    [
-                      _c("span", { staticClass: "icon" }, [
-                        _c("i", { staticClass: "tio-play-circle" })
-                      ])
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ]
-        )
-      ]
-    )
+    return _c("div", { staticClass: "text-center mb-5" }, [
+      _c("h1", { staticClass: "display-4" }, [_vm._v("Teste grátis o Ynzo")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon" }, [
+      _c("i", { staticClass: "tio-copy" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-4" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-sm btn-block btn-primary",
+          attrs: { type: "submit" }
+        },
+        [
+          _c("span", { staticClass: "icon" }, [
+            _c("i", { staticClass: "tio-play-circle" })
+          ])
+        ]
+      )
+    ])
   }
 ]
 render._withStripped = true

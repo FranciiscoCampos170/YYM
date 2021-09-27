@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('plans/free', function (){
     return view('plans/free');
 });
+Route::get('plans/free/create', [\App\Http\Controllers\FreePlanController::class, 'create']);
+Route::post('plans/free/store', [\App\Http\Controllers\FreePlanController::class, 'store']);

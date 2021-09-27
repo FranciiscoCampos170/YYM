@@ -80,56 +80,64 @@
                 <div class="col-lg-6 d-flex justify-content-center align-items-center min-vh-lg-100">
                     <div class="w-100 pt-10 pt-lg-7 pb-7" style="max-width: 25rem;">
                         <!-- Form -->
-                        <form class="js-validate">
+                        <form class="js-validate" @submit="submitMeeting">
                             <div class="text-center mb-5">
                                 <h1 class="display-4">Teste grátis o Ynzo</h1>
                             </div>
 
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
-                                <input type="text" class="form-control form-control-lg" name="title" id="" placeholder="Digite o titulo da reunião" aria-label="Digite o titulo da reunião" required data-msg="Porfavor digite um titulo valido">
+                                <input type="text" class="form-control form-control-lg" name="title" id="" placeholder="Digite o titulo da reunião" aria-label="Digite o titulo da reunião" required data-msg="Porfavor digite um titulo valido"
+                                v-model="title">
                             </div>
                             <!-- End Form Group -->
 
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
-                                <input type="name" class="form-control form-control-lg" name="name" id="" placeholder="Digite o seu nome e sobrenome" aria-label="Digite o seu nome e sobrenome" required data-msg="Porfavor digite um nome e sobrenome valido">
+                                <input type="name" class="form-control form-control-lg" name="name" id="" placeholder="Digite o seu nome e sobrenome" aria-label="Digite o seu nome e sobrenome" required data-msg="Porfavor digite um nome e sobrenome valido"
+                                v-model="name">
                             </div>
                             <!-- End Form Group -->
 
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
-                                <input type="tel" class="form-control form-control-lg" name="phone" id="" placeholder="Telefone" aria-label="Telefone" required data-msg="Porfavor digite um Telefone e sobrenome valido">
+                                <input type="tel" class="form-control form-control-lg" name="phone" id="" placeholder="Telefone" aria-label="Telefone" required data-msg="Porfavor digite um Telefone e sobrenome valido"
+                                v-model="phone">
                             </div>
                             <!-- End Form Group -->
 
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
-                                <input type="email" class="form-control form-control-lg" name="email" id="" placeholder="Digite o seu melhor e-mail" aria-label="Email" required data-msg="Porfavor digite um Email e sobrenome valido">
+                                <input type="email" class="form-control form-control-lg" name="email" id="" placeholder="Digite o seu melhor e-mail" aria-label="Email" required data-msg="Porfavor digite um Email e sobrenome valido"
+                                v-model="email">
                             </div>
                             <!-- End Form Group -->
 
                             <!-- Campo de texto sera exibido apenas quando mudar para resolucao movel-->
                             <!-- Form Group -->
                             <div class="js-form-message form-group" hidden>
-                                <input type="text" class="form-control form-control-lg" name="email" id="" placeholder="Digite o seu melhor e-mail" aria-label="Email" required data-msg="Porfavor digite um Email e sobrenome valido">
+                                <input type="text" class="form-control form-control-lg" name="limitParticipants" id=""
+                                v-model="limitParticipants">
                             </div>
                             <!-- End Form Group -->
                             <!-- Form Group -->
                             <div class="js-form-message form-group" hidden>
-                                <input type="text" class="form-control form-control-lg" name="email" id="" placeholder="Digite o seu melhor e-mail" aria-label="Email" required data-msg="Porfavor digite um Email e sobrenome valido">
+                                <input type="text" class="form-control form-control-lg" name="timeLimit" id=""
+                                v-model="timeLimit">
                             </div>
                             <!-- End Form Group -->
                             <!-- Form Group -->
-                            <div class="js-form-message form-group" hidden>
-                                <input type="text" class="form-control form-control-lg" name="email" id="" placeholder="Digite o seu melhor e-mail" aria-label="Email" required data-msg="Porfavor digite um Email e sobrenome valido">
+                            <div class="js-form-message form-group">
+                                <input type="text" class="form-control form-control-lg" name="link" id="link"
+                                v-model="link" readonly>
                             </div>
                             <!-- End Form Group -->
                             <!-- Fim Campo de texto sera exibido apenas quando mudar para resolucao movel-->
 
                             <div class="row">
                                 <div class="col-8">
-                                    <button type="submit" class="btn btn-sm btn-block btn-outline-success">
+                                    <button type="button" class="btn btn-sm btn-block btn-outline-success"
+                                            v-on:click="copyToClipboard">
                                         <span class="icon">
                                           <i class="tio-copy"></i>
                                         </span>
@@ -160,8 +168,48 @@
 
 <script>
 export default {
+    data(){
+        return {
+            title: "",
+            name: "",
+            phone: "",
+            email: "",
+            url: "free/create",
+            limitParticipants:"",
+            timeLimit: "",
+            link: "",
+        }
+    },
     mounted() {
-        console.log('Component mounted.')
+        this.create()
+    },
+    methods: {
+        create() {
+            let $this = this
+            axios
+                .get(this.url)
+                .then(response => {(this.limitParticipants = response.data.limitParticipants,
+                                    this.timeLimit = response.data.timeLimit,
+                                    this.link = response.data.link)})
+        },
+        copyToClipboard() {
+            let text = document.getElementById("link");
+            text.select();
+            document.execCommand("copy");
+        },
+        submitMeeting(e) {
+            e.preventDefault();
+            axios.post('free/store', {
+                title: this.title,
+                name: this.name,
+                phone: this.phone,
+                email: this.email,
+                limitParticipants: this.limitParticipants,
+                timeLimit: this.timeLimit,
+                link: this.link
+            })
+        }
     }
+
 }
 </script>
