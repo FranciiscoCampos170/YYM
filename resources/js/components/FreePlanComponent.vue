@@ -80,7 +80,7 @@
                 <div class="col-lg-6 d-flex justify-content-center align-items-center min-vh-lg-100">
                     <div class="w-100 pt-10 pt-lg-7 pb-7" style="max-width: 25rem;">
                         <!-- Form -->
-                        <form class="js-validate" @submit="submitMeeting">
+                        <form class="js-validate" @submit.prevent>
                             <div class="text-center mb-5">
                                 <h1 class="display-4">Teste grátis o Ynzo</h1>
                             </div>
@@ -101,14 +101,14 @@
 
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
-                                <input type="tel" class="form-control form-control-lg" name="phone" id="" placeholder="Telefone" aria-label="Telefone" required data-msg="Porfavor digite um Telefone e sobrenome valido"
+                                <input type="tel" class="form-control form-control-lg" name="phone" id="" placeholder="Telefone" aria-label="Telefone" required data-msg="Porfavor digite um Telefone"
                                 v-model="phone">
                             </div>
                             <!-- End Form Group -->
 
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
-                                <input type="email" class="form-control form-control-lg" name="email" id="" placeholder="Digite o seu melhor e-mail" aria-label="Email" required data-msg="Porfavor digite um Email e sobrenome valido"
+                                <input type="email" class="form-control form-control-lg" name="email" id="" placeholder="Digite o seu melhor e-mail" aria-label="Email" required data-msg="Porfavor digite um Email valido"
                                 v-model="email">
                             </div>
                             <!-- End Form Group -->
@@ -125,6 +125,25 @@
                                 <input type="text" class="form-control form-control-lg" name="timeLimit" id=""
                                 v-model="timeLimit">
                             </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div class="js-form-message form-group" hidden>
+                                <input type="text" class="form-control form-control-lg" name="timeLimit" id=""
+                                       v-model="attendePassword">
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div class="js-form-message form-group" hidden>
+                                <input type="text" class="form-control form-control-lg" name="timeLimit" id=""
+                                       v-model="password">
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div class="js-form-message form-group" hidden>
+                                <input type="text" class="form-control form-control-lg" name="timeLimit" id=""
+                                       v-model="meeting_id">
+                            </div>
+
                             <!-- End Form Group -->
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
@@ -145,7 +164,7 @@
                                     </button>
                                 </div>
                                 <div class="col-4">
-                                    <button type="submit" class="btn btn-sm btn-block btn-primary">
+                                    <button type="button" class="btn btn-sm btn-block btn-primary" @click="submitMeeting">
                                         <span class="icon">
                                           <i class="tio-play-circle"></i>
                                         </span>
@@ -178,6 +197,9 @@ export default {
             limitParticipants:"",
             timeLimit: "",
             link: "",
+            attendePassword: "",
+            password: "",
+            meeting_id: ""
         }
     },
     mounted() {
@@ -190,15 +212,19 @@ export default {
                 .get(this.url)
                 .then(response => {(this.limitParticipants = response.data.limitParticipants,
                                     this.timeLimit = response.data.timeLimit,
-                                    this.link = response.data.link)})
+                                    this.link = response.data.link,
+                                    this.password = response.data.password,
+                                    this.attendePassword = response.data.attendePassword,
+                                    this.meeting_id = response.data.meeting_id)})
         },
         copyToClipboard() {
             let text = document.getElementById("link");
             text.select();
             document.execCommand("copy");
         },
-        submitMeeting(e) {
-            e.preventDefault();
+        submitMeeting() {
+            //antes validar se os campos tem valor
+            //e.preventDefault();
             axios.post('free/store', {
                 title: this.title,
                 name: this.name,
@@ -206,7 +232,10 @@ export default {
                 email: this.email,
                 limitParticipants: this.limitParticipants,
                 timeLimit: this.timeLimit,
-                link: this.link
+                link: this.link,
+                attendePassword: this.attendePassword,
+                password: this.password,
+                meeting_id: this.meeting_id
             })
         }
     }

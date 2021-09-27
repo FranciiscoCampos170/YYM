@@ -2268,6 +2268,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2278,7 +2297,10 @@ __webpack_require__.r(__webpack_exports__);
       url: "free/create",
       limitParticipants: "",
       timeLimit: "",
-      link: ""
+      link: "",
+      attendePassword: "",
+      password: "",
+      meeting_id: ""
     };
   },
   mounted: function mounted() {
@@ -2290,7 +2312,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var $this = this;
       axios.get(this.url).then(function (response) {
-        _this.limitParticipants = response.data.limitParticipants, _this.timeLimit = response.data.timeLimit, _this.link = response.data.link;
+        _this.limitParticipants = response.data.limitParticipants, _this.timeLimit = response.data.timeLimit, _this.link = response.data.link, _this.password = response.data.password, _this.attendePassword = response.data.attendePassword, _this.meeting_id = response.data.meeting_id;
       });
     },
     copyToClipboard: function copyToClipboard() {
@@ -2298,8 +2320,9 @@ __webpack_require__.r(__webpack_exports__);
       text.select();
       document.execCommand("copy");
     },
-    submitMeeting: function submitMeeting(e) {
-      e.preventDefault();
+    submitMeeting: function submitMeeting() {
+      //antes validar se os campos tem valor
+      //e.preventDefault();
       axios.post('free/store', {
         title: this.title,
         name: this.name,
@@ -2307,7 +2330,10 @@ __webpack_require__.r(__webpack_exports__);
         email: this.email,
         limitParticipants: this.limitParticipants,
         timeLimit: this.timeLimit,
-        link: this.link
+        link: this.link,
+        attendePassword: this.attendePassword,
+        password: this.password,
+        meeting_id: this.meeting_id
       });
     }
   }
@@ -38342,7 +38368,11 @@ var render = function() {
                     "form",
                     {
                       staticClass: "js-validate",
-                      on: { submit: _vm.submitMeeting }
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                        }
+                      }
                     },
                     [
                       _vm._m(2),
@@ -38430,8 +38460,7 @@ var render = function() {
                             placeholder: "Telefone",
                             "aria-label": "Telefone",
                             required: "",
-                            "data-msg":
-                              "Porfavor digite um Telefone e sobrenome valido"
+                            "data-msg": "Porfavor digite um Telefone"
                           },
                           domProps: { value: _vm.phone },
                           on: {
@@ -38463,8 +38492,7 @@ var render = function() {
                             placeholder: "Digite o seu melhor e-mail",
                             "aria-label": "Email",
                             required: "",
-                            "data-msg":
-                              "Porfavor digite um Email e sobrenome valido"
+                            "data-msg": "Porfavor digite um Email valido"
                           },
                           domProps: { value: _vm.email },
                           on: {
@@ -38544,6 +38572,99 @@ var render = function() {
                         ]
                       ),
                       _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "js-form-message form-group",
+                          attrs: { hidden: "" }
+                        },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.attendePassword,
+                                expression: "attendePassword"
+                              }
+                            ],
+                            staticClass: "form-control form-control-lg",
+                            attrs: { type: "text", name: "timeLimit", id: "" },
+                            domProps: { value: _vm.attendePassword },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.attendePassword = $event.target.value
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "js-form-message form-group",
+                          attrs: { hidden: "" }
+                        },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.password,
+                                expression: "password"
+                              }
+                            ],
+                            staticClass: "form-control form-control-lg",
+                            attrs: { type: "text", name: "timeLimit", id: "" },
+                            domProps: { value: _vm.password },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.password = $event.target.value
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "js-form-message form-group",
+                          attrs: { hidden: "" }
+                        },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.meeting_id,
+                                expression: "meeting_id"
+                              }
+                            ],
+                            staticClass: "form-control form-control-lg",
+                            attrs: { type: "text", name: "timeLimit", id: "" },
+                            domProps: { value: _vm.meeting_id },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.meeting_id = $event.target.value
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
                       _c("div", { staticClass: "js-form-message form-group" }, [
                         _c("input", {
                           directives: [
@@ -38592,7 +38713,17 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _vm._m(4)
+                        _c("div", { staticClass: "col-4" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-sm btn-block btn-primary",
+                              attrs: { type: "button" },
+                              on: { click: _vm.submitMeeting }
+                            },
+                            [_vm._m(4)]
+                          )
+                        ])
                       ])
                     ]
                   )
@@ -38764,19 +38895,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-4" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-sm btn-block btn-primary",
-          attrs: { type: "submit" }
-        },
-        [
-          _c("span", { staticClass: "icon" }, [
-            _c("i", { staticClass: "tio-play-circle" })
-          ])
-        ]
-      )
+    return _c("span", { staticClass: "icon" }, [
+      _c("i", { staticClass: "tio-play-circle" })
     ])
   }
 ]
