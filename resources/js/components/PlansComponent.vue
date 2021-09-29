@@ -114,7 +114,7 @@
                                 <li class="text-muted" ><span class="fa-li"><i class="fas fa-times"></i></span><del>Integração com Ambiente de
                                     Aprendizagem</del></li>
                             </ul>
-                            <a :href="'/plans/free'" class="btn btn-block btn-primary text-uppercase">Testar grátis</a>
+                            <a href="{{route('')}}" class="btn btn-block btn-primary text-uppercase">Testar grátis</a>
                         </div>
 
                     </div>

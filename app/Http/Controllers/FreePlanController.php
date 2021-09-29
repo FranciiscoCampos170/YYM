@@ -23,13 +23,13 @@ class FreePlanController extends Controller
             'timeLimit' => 45,
             'link' => $link
         ];
-        return response()->json($data);
+        return view('plans.free')->with($data);
+        //return response()->json($data);
     }
 
     public function store(Request $request)
     {
         //falta criar FormRequest para validar
-
         $user =  TryFree::create([
             'title' => $request->get('title'),
             'moderator_name' => $request->get('name'),
@@ -42,6 +42,57 @@ class FreePlanController extends Controller
             'time_limit' => $request->get('timeLimit'),
             'link' => $request->get('link'),
         ]);
-        return response()->json($request->all());
+        return $this->startFreeMeeting($user->moderator_name, $user->meeting_id, $user->title, $user->password, $user->attende_password, $user->limit_participant, $user->time_limit);
     }
+    public function startFreeMeeting($name, $meetingId, $meetingName, $password, $attendePassword, $limitParticipant, $timeLimit)
+    {
+        //confirmar o tempo limite da reuniao
+        $createMeeting = \Bigbluebutton::initCreateMeeting([
+            'meetingID' => $meetingId,
+            'meetingName' => $meetingName,
+            'attendeePW' => $attendePassword,
+            'moderatorPW' => $password,
+        ]);
+        $createMeeting->setDuration($timeLimit); //define o tempo limite da reuniao
+        $createMeeting->setMaxParticipants($limitParticipant); //define o numero maximo de participantes para essa reuniao
+        //$createMeeting->setWelcomeMessage("Ola Mundo!");
+        //$createMeeting->setRecord(true);
+        //$createMeeting->setLogoutUrl( route('send-feedback', $name));
+        $createMeeting->setLogo("https://ynzoyami.com/wp-content/uploads/2020/07/YNZO-LOGOTIPO-12.png");
+        \Bigbluebutton::create($createMeeting);
+
+        return redirect()->to(
+            \Bigbluebutton::join([
+                'meetingID' => $meetingId,
+                'userName' => $name,
+                'password' => $password //which user role want to join set password here
+            ])
+        );
+    }
+
+    public function joinFreeMeeting($meetingId)
+    {
+        //return view('plans.join-free-meeting');
+
+        $isMeetingRunnig = \Bigbluebutton::isMeetingRunning([
+            'meetingID' => $meetingId,
+        ]);
+
+        if (!$isMeetingRunnig) {
+            //$meeting = TryFree::where('meeting_id', $meetingId)->firstOrFail();
+            $data = [
+                'meetingID' => $meetingId,
+                //'userName' => $meeting->meeting_name,
+                //'password' =>$meeting->attende_password,
+            ];
+           // return view('meeting-not-started-for-free')->with($data);
+        }
+        $meetingInfo = TryFree::where('meeting_id', $meetingId)->firstOrFail();
+        $meetingName = $meetingInfo->title;
+        $meetingId = $meetingInfo->meeting_id;
+        $meetingOwer = $meetingInfo->moderator_name;
+        $meetingPassword = $meetingInfo->attende_password;
+        return view('plans.join-free-meeting', compact('meetingId', 'meetingPassword', 'meetingOwer', 'meetingName'));
+    }
+
 }

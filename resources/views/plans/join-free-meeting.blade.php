@@ -1,4 +1,8 @@
-<template>
+@extends('layouts.app')
+@section('content')
+    {{--<div id="app">--}}
+    {{--    <free-plan-component></free-plan-component>--}}
+    {{--</div>--}}
     <!-- ========== MAIN CONTENT ========== -->
     <!-- ========== MAIN CONTENT ========== -->
     <main id="content" role="main" class="main pt-0">
@@ -43,7 +47,7 @@
                         </div>
 
                         <div class="mb-5">
-                            <h2 class="display-4">Build digital products with:</h2>
+                            <h2 class="display-4">Você foi convidado para participar em uma reunião:</h2>
                         </div>
 
                         <!-- List Checked -->
@@ -53,7 +57,7 @@
                             </li>
 
                             <li class="list-checked-item">
-                                <span class="d-block font-weight-bold mb-1">Pode adicionar até 15 participantes</span>
+                                <span class="d-block font-weight-bold mb-1">Poderão se juntar à reunião até 15 participantes</span>
                             </li>
                         </ul>
                         <!-- End List Checked -->
@@ -80,91 +84,96 @@
                 <div class="col-lg-6 d-flex justify-content-center align-items-center min-vh-lg-100">
                     <div class="w-100 pt-10 pt-lg-7 pb-7" style="max-width: 25rem;">
                         <!-- Form -->
-                        <form class="js-validate" @submit.prevent>
+                        <form class="js-validate" method="POST" action="{{route('store.free_plan')}}">
+                            @csrf
                             <div class="text-center mb-5">
                                 <h1 class="display-4">Teste grátis o Ynzo</h1>
                             </div>
 
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
-                                <input type="text" class="form-control form-control-lg" name="title" id="" placeholder="Digite o titulo da reunião" aria-label="Digite o titulo da reunião" required data-msg="Porfavor digite um titulo valido"
-                                v-model="title">
+                                <label for="title"><b>Tema da reunião</b></label>
+                                <input type="text"
+                                       class="form-control form-control-lg"
+                                       name="title"
+                                       id="title" readonly
+                                       aria-label="Digite o titulo da reunião" required
+                                       data-msg="Porfavor digite um titulo valido"
+                                value="{{$meetingName}}">
                             </div>
                             <!-- End Form Group -->
 
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
-                                <input type="name" class="form-control form-control-lg" name="name" id="" placeholder="Digite o seu nome e sobrenome" aria-label="Digite o seu nome e sobrenome" required data-msg="Porfavor digite um nome e sobrenome valido"
-                                v-model="name">
+                                <label for="host"><b>Convite feito pelo (a)</b></label>
+                                <input type="name" class="form-control form-control-lg"
+                                       name="host" id="host"
+                                       readonly
+                                       aria-label="Digite o seu nome e sobrenome"
+                                       required data-msg="Porfavor digite um nome e sobrenome valido"
+                                        value="{{$meetingOwer}}">
                             </div>
                             <!-- End Form Group -->
 
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
-                                <input type="tel" class="form-control form-control-lg" name="phone" id="" placeholder="Telefone" aria-label="Telefone" required data-msg="Porfavor digite um Telefone"
-                                v-model="phone">
+                                <input type="name" class="form-control form-control-lg"
+                                       name="name" id="name"
+                                       placeholder="Digite o seu nome e sobrenome"
+                                       aria-label="Digite o seu nome e sobrenome"
+                                       required data-msg="Porfavor digite um nome e sobrenome valido">
                             </div>
                             <!-- End Form Group -->
 
-                            <!-- Form Group -->
-                            <div class="js-form-message form-group">
-                                <input type="email" class="form-control form-control-lg" name="email" id="" placeholder="Digite o seu melhor e-mail" aria-label="Email" required data-msg="Porfavor digite um Email valido"
-                                v-model="email">
-                            </div>
-                            <!-- End Form Group -->
+
+
 
                             <!-- Campo de texto sera exibido apenas quando mudar para resolucao movel-->
                             <!-- Form Group -->
                             <div class="js-form-message form-group" hidden>
-                                <input type="text" class="form-control form-control-lg" name="limitParticipants" id=""
-                                v-model="limitParticipants">
+                                <input type="text" class="form-control form-control-lg"
+                                       name="limitParticipants" id="" value="">
                             </div>
                             <!-- End Form Group -->
                             <!-- Form Group -->
                             <div class="js-form-message form-group" hidden>
-                                <input type="text" class="form-control form-control-lg" name="timeLimit" id=""
-                                v-model="timeLimit">
+                                <input type="text" class="form-control form-control-lg"
+                                       name="timeLimit" id="" value="">
                             </div>
                             <!-- End Form Group -->
                             <!-- Form Group -->
                             <div class="js-form-message form-group" hidden>
-                                <input type="text" class="form-control form-control-lg" name="timeLimit" id=""
-                                       v-model="attendePassword">
+                                <input type="text" class="form-control form-control-lg"
+                                       name="attendePassword" id="" value="">
                             </div>
                             <!-- End Form Group -->
                             <!-- Form Group -->
                             <div class="js-form-message form-group" hidden>
-                                <input type="text" class="form-control form-control-lg" name="timeLimit" id=""
-                                       v-model="password">
+                                <input type="text" class="form-control form-control-lg"
+                                       name="password" id="" value="">
                             </div>
                             <!-- End Form Group -->
                             <!-- Form Group -->
                             <div class="js-form-message form-group" hidden>
-                                <input type="text" class="form-control form-control-lg" name="timeLimit" id=""
-                                       v-model="meeting_id">
+                                <input type="text" class="form-control form-control-lg"
+                                       name="meeting_id" id="" value="">
                             </div>
 
                             <!-- End Form Group -->
-                            <!-- Form Group -->
-                            <div class="js-form-message form-group">
-                                <input type="text" class="form-control form-control-lg" name="link" id="link"
-                                v-model="link" readonly>
-                            </div>
-                            <!-- End Form Group -->
+
                             <!-- Fim Campo de texto sera exibido apenas quando mudar para resolucao movel-->
 
                             <div class="row">
-                                <div class="col-8">
-                                    <button type="button" class="btn btn-sm btn-block btn-outline-success"
-                                            v-on:click="copyToClipboard">
-                                        <span class="icon">
-                                          <i class="tio-copy"></i>
-                                        </span>
-                                        Copiar link da reunião
-                                    </button>
-                                </div>
-                                <div class="col-4">
-                                    <button type="button" class="btn btn-sm btn-block btn-primary" @click="submitMeeting">
+{{--                                <div class="col-8">--}}
+{{--                                    <button type="button" class="btn btn-sm btn-block btn-outline-success" onclick="copyToClipboard()">--}}
+{{--                                        <span class="icon">--}}
+{{--                                          <i class="tio-copy"></i>--}}
+{{--                                        </span>--}}
+{{--                                        Copiar link da reunião--}}
+{{--                                    </button>--}}
+{{--                                </div>--}}
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-sm btn-block btn-primary">
                                         <span class="icon">
                                           <i class="tio-play-circle"></i>
                                         </span>
@@ -182,65 +191,11 @@
         <!-- End Content -->
     </main>
     <!-- ========== END MAIN CONTENT ========== -->
-
-</template>
-
-<script>
-export default {
-    data(){
-        return {
-            title: "",
-            name: "",
-            phone: "",
-            email: "",
-            url: "free/create",
-            limitParticipants:"",
-            timeLimit: "",
-            link: "",
-            attendePassword: "",
-            password: "",
-            meeting_id: ""
-        }
-    },
-    mounted() {
-        this.create()
-    },
-    methods: {
-        create() {
-            let $this = this
-            axios
-                .get(this.url)
-                .then(response => {(this.limitParticipants = response.data.limitParticipants,
-                                    this.timeLimit = response.data.timeLimit,
-                                    this.link = response.data.link,
-                                    this.password = response.data.password,
-                                    this.attendePassword = response.data.attendePassword,
-                                    this.meeting_id = response.data.meeting_id)})
-        },
-        copyToClipboard() {
+    <script>
+        function copyToClipboard() {
             let text = document.getElementById("link");
             text.select();
             document.execCommand("copy");
-        },
-        submitMeeting() {
-            //antes validar se os campos tem valor
-            //e.preventDefault();
-            axios.post('free/store', {
-                title: this.title,
-                name: this.name,
-                phone: this.phone,
-                email: this.email,
-                limitParticipants: this.limitParticipants,
-                timeLimit: this.timeLimit,
-                link: this.link,
-                attendePassword: this.attendePassword,
-                password: this.password,
-                meeting_id: this.meeting_id
-            }).then(function (response){
-                window.open(response.data.redirect, "_blank");
-            })
         }
-    }
-
-}
-</script>
+    </script>
+@endsection
