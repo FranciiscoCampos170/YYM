@@ -84,7 +84,7 @@
                 <div class="col-lg-6 d-flex justify-content-center align-items-center min-vh-lg-100">
                     <div class="w-100 pt-10 pt-lg-7 pb-7" style="max-width: 25rem;">
                         <!-- Form -->
-                        <form class="js-validate" method="POST" action="{{route('store.free_plan')}}">
+                        <form class="js-validate" method="POST" action="{{route('join.submit_free_meeting')}}">
                             @csrf
                             <div class="text-center mb-5">
                                 <h1 class="display-4">Teste grátis o Ynzo</h1>
@@ -125,9 +125,6 @@
                             </div>
                             <!-- End Form Group -->
 
-
-
-
                             <!-- Campo de texto sera exibido apenas quando mudar para resolucao movel-->
                             <!-- Form Group -->
                             <div class="js-form-message form-group" hidden>
@@ -150,13 +147,13 @@
                             <!-- Form Group -->
                             <div class="js-form-message form-group" hidden>
                                 <input type="text" class="form-control form-control-lg"
-                                       name="password" id="" value="">
+                                       name="password" id="" value="{{$meetingPassword}}">
                             </div>
                             <!-- End Form Group -->
                             <!-- Form Group -->
                             <div class="js-form-message form-group" hidden>
                                 <input type="text" class="form-control form-control-lg"
-                                       name="meeting_id" id="" value="">
+                                       name="meeting_id" id="" value="{{$meetingId}}">
                             </div>
 
                             <!-- End Form Group -->

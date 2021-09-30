@@ -95,4 +95,15 @@ class FreePlanController extends Controller
         return view('plans.join-free-meeting', compact('meetingId', 'meetingPassword', 'meetingOwer', 'meetingName'));
     }
 
+    public function submitJoinFreeMeeting(Request $request)
+    {
+        return redirect()->to(
+            \Bigbluebutton::join([
+                'meetingID' => $request->get('meeting_id'),
+                'userName' => $request->get('name'),
+                'password' => $request->get('password')
+            ])
+        );
+    }
+
 }
