@@ -152,7 +152,7 @@
                                 <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span><del>Integração com Ambiente de
                                         Aprendizagem</del></li>
                             </ul>
-                            <a href="" class="btn btn-block btn-primary text-uppercase">Contratar</a>
+                            <a href="{{route('signup', 2)}}" class="btn btn-block btn-primary text-uppercase">Contratar</a>
                         </div>
 
                     </div>

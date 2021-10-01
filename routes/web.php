@@ -25,3 +25,7 @@ Route::get('plans/free/create', [\App\Http\Controllers\FreePlanController::class
 Route::post('plans/free/store', [\App\Http\Controllers\FreePlanController::class, 'store'])->name('store.free_plan');
 Route::get('join-free-meeting/{meetingId}', [\App\Http\Controllers\FreePlanController::class, 'joinFreeMeeting'])->name('join.free_meeting');
 Route::post('join-free-meeting',[\App\Http\Controllers\FreePlanController::class, 'submitJoinFreeMeeting'])->name('join.submit_free_meeting');
+
+
+//group for paid
+Route::get('signup/{planId}', [\App\Http\Controllers\SignupController::class, 'signup'])->name('signup');
