@@ -27,6 +27,13 @@
     <script src="{{asset('js/hs-toggle-password/dist/js/hs-toggle-password.js')}}"></script>
     <script src="{{asset('js/jquery-validation/dist/jquery.validate.min.js')}}"></script>
     <script src="{{asset('js/select2/dist/js/select2.full.min.js')}}"></script>
+    <script src="{{asset('js/vendor/hs-unfold/dist/hs-unfold.min.js')}}"></script>
+    <script src="{{asset('js/vendor/hs-form-search/dist/hs-form-search.min.js')}}"></script>
+    <script src="{{asset('js/vendor/hs-file-attach/dist/hs-file-attach.min.js')}}"></script>
+    <script src="{{asset('js/vendor/hs-step-form/dist/hs-step-form.min.js')}}"></script>
+    <script src="{{asset('js/vendor/jquery-mask-plugin/dist/jquery.mask.min.js')}}"></script>
+    <script src="{{asset('js/vendor/hs-add-field/dist/hs-add-field.min.js')}}"></script>
+    <script src="{{asset('js/jquery-validation/dist/jquery.validate.min.js')}}"></script>
 
     <!-- JS Front -->
     <script src="{{asset('js/theme.min.js')}}"></script>
@@ -52,6 +59,61 @@
             // =======================================================
             $('.js-select2-custom').each(function () {
                 var select2 = $.HSCore.components.HSSelect2.init($(this));
+            });
+
+            // INITIALIZATION OF UNFOLD
+            // =======================================================
+            $('.js-hs-unfold-invoker').each(function () {
+                var unfold = new HSUnfold($(this)).init();
+            });
+
+
+            // INITIALIZATION OF FORM SEARCH
+            // =======================================================
+            $('.js-form-search').each(function () {
+                new HSFormSearch($(this)).init()
+            });
+
+            // INITIALIZATION OF FILE ATTACH
+            // =======================================================
+            $('.js-file-attach').each(function () {
+                var customFile = new HSFileAttach($(this)).init();
+            });
+
+            // INITIALIZATION OF STEP FORM
+            // =======================================================
+            $('.js-step-form').each(function () {
+                var stepForm = new HSStepForm($(this), {
+                    finish: function() {
+                        $("#addUserStepFormProgress").hide();
+                        $("#addUserStepFormContent").hide();
+                        $("#successMessageContent").show();
+                    }
+                }).init();
+            });
+
+            // INITIALIZATION OF MASKED INPUT
+            // =======================================================
+            $('.js-masked-input').each(function () {
+                var mask = $.HSCore.components.HSMask.init($(this));
+            });
+
+            // INITIALIZATION OF SELECT2
+            // =======================================================
+            $('.js-select2-custom').each(function () {
+                var select2 = $.HSCore.components.HSSelect2.init($(this));
+            });
+
+            // INITIALIZATION OF ADD INPUT FILED
+            // =======================================================
+            $('.js-add-field').each(function () {
+                new HSAddField($(this), {
+                    addedField: function() {
+                        $('.js-add-field .js-select2-custom-dynamic').each(function () {
+                            var select2dynamic = $.HSCore.components.HSSelect2.init($(this));
+                        });
+                    }
+                }).init();
             });
         });
     </script>

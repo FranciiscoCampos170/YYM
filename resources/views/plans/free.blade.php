@@ -15,7 +15,7 @@
                 <div class="position-absolute top-0 left-0 right-0 mt-3 mx-3">
                     <div class="d-none d-lg-flex justify-content-between">
                         <a href="#">
-                            <img class="w-100" :src="'/img/YNZO-08.png'" alt="Image Description" style="min-width: 7rem; max-width: 7rem;">
+                            <img class="w-100" src={{ asset('img/YNZO-08.png') }} alt="Image Description" style="min-width: 7rem; max-width: 7rem;">
                         </a>
 
                         <!-- Select -->
