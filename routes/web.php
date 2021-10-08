@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SignupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,4 @@ Route::post('join-free-meeting',[\App\Http\Controllers\FreePlanController::class
 
 //group for paid
 Route::get('signup/{planId}', [\App\Http\Controllers\SignupController::class, 'signup'])->name('signup');
+Route::post('signup/store', [SignupController::class, 'store'])->name('signup.store');

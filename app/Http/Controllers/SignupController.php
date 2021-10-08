@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SignupStoreRequest;
+use App\Models\AccountInfo;
 use App\Models\Plan;
+use App\Models\User;
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class SignupController extends Controller
 {
@@ -12,8 +18,39 @@ class SignupController extends Controller
 
     public function signup($planId)
     {
+        //validar caso ele meta id errado na url redirectionar para a pagina actual
         $planInfo = Plan::where('id', $planId)->firstOrFail();
         return view('plans.signup.register', compact('planInfo'));
         //return view('auth.register', compact('planInfo'));
+    }
+
+    public function store(SignupStoreRequest $request)
+    {
+        //cadastrar utilizador
+            // validar email, tem que ser unico.
+            //se o metodo de pagamento selecionado for transferencia verificar se o campo de arquivo tem valor
+        DB::transaction(function () use($request){
+            $user = User::create([
+                    'name' => $request->get('firstName') ." ". $request->get('lastName'),
+                    'email' => $request->get('email'),
+                    'password' => Hash::make($request->get('password')),
+                ]);
+
+            $signup = AccountInfo::create([
+                'plan_id' => $request->get('selected_plan'), 
+                'month' => $request->get('payment_period'),
+                'total' => $request->get('total_to_pay'),
+                'payment_method' => 1,
+                'total_of_rooms' => $request->get('total_of_rooms'),
+                'file' => 1,
+                'user_id' => $user->id,
+                'state' => "pending",
+                'paid_at' => now()
+            ]);
+   
+        });
+         
+            //cadastrar conta com informacoes de utilizador.
+        return $request;
     }
 }

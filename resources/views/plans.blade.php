@@ -17,7 +17,7 @@
     <div class="container py-5 py-sm-7">
         
         <a class="d-flex justify-content-center mb-5" href="index.html">
-            <img class="z-index-2" src="{{asset('img/YNZO-08.png')}}" alt="Image Description" style="width: 8rem;">
+            <img class="z-index-2" src="{{asset('img/YNZO-08.png')}}" alt="Image Description" style="width: 17rem;">
         </a>
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">

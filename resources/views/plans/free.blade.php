@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="mb-5">
-                        <h2 class="display-4">Build digital products with:</h2>
+                        <h2 class="display-4">Crie uma reunião grátis no Ynzo:</h2>
                     </div>
 
                     <!-- List Checked -->

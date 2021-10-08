@@ -1,16 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
     <main id="content" role="main" class="main" data-select2-id="content">
         <!-- Content -->
         <div class="content container-fluid" data-select2-id="268">
             <!-- Step Form -->
             <form class="js-step-form py-md-5" data-hs-step-form-options='{
                 "progressSelector": "#addUserStepFormProgress",
-            "stepsSelector": "#addUserStepFormContent",
-            "endSelector": "#addUserFinishBtn",
-            "isValidate": false
-            }' data-select2-id="267">
+                "stepsSelector": "#addUserStepFormContent",
+                "endSelector": "#addUserFinishBtn",
+                "isValidate": false
+                }' data-select2-id="267" action="{{ route('signup.store') }}" method="POST">
+                @csrf
                 <div class="row justify-content-lg-center" data-select2-id="266">
                     <div class="col-lg-8" data-select2-id="265">
                         <!-- Step -->
@@ -20,7 +30,7 @@
                                 }'>
                                     <span class="step-icon step-icon-soft-dark">1</span>
                                     <div class="step-content">
-                                        <span class="step-title" >Dados pessoais ou institucional</span>
+                                        <span class="step-title">Dados pessoais ou institucional</span>
                                     </div>
                                 </a>
                             </li>
@@ -83,7 +93,7 @@
                                         <label for="organizationLabel" class="col-sm-3 col-form-label input-label">Palavra-passe</label>
 
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="organization" id="organizationLabel" placeholder="" aria-label="Htmlstream">
+                                            <input type="password" class="form-control" name="password" id="passwordInput" placeholder="" aria-label="Htmlstream">
                                         </div>
                                     </div>
                                     <!-- End Form Group -->
@@ -92,7 +102,7 @@
                                     <div class="row form-group">
                                         <label for="departmentLabel" class="col-sm-3 col-form-label input-label">Confirmar palavra-passe</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="department" id="departmentLabel" placeholder="" aria-label="Human resources">
+                                            <input type="password" class="form-control" name="password_confirmation" id="password_confirmationInput" placeholder="" aria-label="Human resources">
                                         </div>
                                     </div>
                                     <!-- End Form Group -->
@@ -120,8 +130,12 @@
                                         <label for="locationLabel" class="col-sm-3 col-form-label input-label">Plano selecionado</label>
 
                                         <div class="col-sm-9" data-select2-id="262">
+                                            <div class="mb-3" hidden>
+                                                <input type="text" class="form-control" name="selected_plan" id="selectedPlanInput" placeholder="City" aria-label="City" value="{{ $planInfo->id }}" readonly onblur="setConfirmationValue()">
+                                            </div>
                                             <div class="mb-3">
-                                                <input type="text" class="form-control" name="selected_plan" id="selectedPlanInput" placeholder="City" aria-label="City" value="{{strtoupper($planInfo->name)}}" readonly onblur="setConfirmationValue()">
+                                                <input type="text" class="form-control" placeholder="City" aria-label="City"
+                                                                                                    value="{{ strtoupper($planInfo->name) }}" readonly >
                                             </div>
                                         </div>
                                     </div>
@@ -143,7 +157,7 @@
                                         <label for="addressLine1Label" class="col-sm-3 col-form-label input-label">Periodo de pagamento</label>
 
                                         <div class="col-sm-9">
-                                            <select class="js-select2-custom custom-select select2-hidden-accessible" size="1" style="opacity: 0;"  data-select2-id="locationLabel" tabindex="-1" aria-hidden="true" id="plano" onchange="setNewPrice({{ $planInfo->price }})">
+                                            <select class="js-select2-custom custom-select select2-hidden-accessible" size="1" name="payment_period" style="opacity: 0;"  data-select2-id="locationLabel" tabindex="-1" aria-hidden="true" id="plano" onchange="setNewPrice({{ $planInfo->price }})">
                                                 <option value=""></option>
                                                 <option value="3">Trimestral</option>
                                                 <option value="6">Semestral</option>
@@ -158,7 +172,7 @@
                                         <label for="addressLine1Label" class="col-sm-3 col-form-label input-label">Quantidade de salas</label>
 
                                         <div class="col-sm-9">
-                                            <input type="number" class="form-control" name="addressLine1" aria-label="Your address" value="" min="1" max="100" id="room_number"
+                                            <input type="number" class="form-control" name="total_of_rooms" aria-label="Your address" min="1" max="100" id="room_number"
                                                    onchange="setNewPrice({{ $planInfo->price }})">
                                         </div>
                                     </div>
@@ -169,7 +183,7 @@
                                         <label for="addressLine1Label" class="col-sm-3 col-form-label input-label">Total a pagar (kz)</label>
 
                                         <div class="col-sm-9">
-                                            <input type="number" class="form-control" name="addressLine1" aria-label="Your address" id="valor-pagar" readonly>
+                                            <input type="number" class="form-control" name="total_to_pay" aria-label="Your address" id="valor-pagar" readonly>
                                         </div>
                                     </div>
                                     <!-- End Form Group -->
@@ -188,11 +202,22 @@
                 </div>
                 <!-- End Custom Radio -->
 
+                {{--   
                 <!-- Custom Radio -->
                 <div class="form-control">
                     <div class="custom-control custom-radio">
                         <input type="radio" class="custom-control-input" name="userAccountTypeRadio" id="userAccountTypeRadio2">
                         <label class="custom-control-label" for="userAccountTypeRadio2">Paypal</label>
+                    </div>
+                </div>
+                <!-- End Custom Radio -->
+                --}}
+
+                <!-- Custom Radio -->
+                <div class="form-control">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="userAccountTypeRadio" id="userAccountTypeRadio3" onchange="launchIbanModal()">
+                        <label class="custom-control-label" for="userAccountTypeRadio3">Transferência bancária</label>
                     </div>
                 </div>
                 <!-- End Custom Radio -->
@@ -225,47 +250,45 @@
 <div id="addUserStepConfirmation" class="card card-lg" style="display: none;">
 <!-- Body -->
 <div class="card-body">
-    <dl class="row">
-        <dt class="col-sm-4 text-sm-left">Nome completo:</dt>
-        <dd class="col-sm-8">
-            <span id="nomecompleto_confirmacao"></span>
-        </dd>
-
-        <dt class="col-sm-4 text-sm-left">E-mail:</dt>
-        <dd class="col-sm-8">
-            <span id="email_confirmation"></span>
-        </dd>
-
-        <dt class="col-sm-4 text-sm-left">Plano selecionado:</dt>
-        <dd class="col-sm-8">
-            <span id="selectedPlan_confirmation"></span>
-        </dd>
-
-        <dt class="col-sm-4 text-sm-left">Valor (kz):</dt>
-        <dd class="col-sm-8">
-            <span id="price_confirmation"></span>
-        </dd>
-
-        <dt class="col-sm-4 text-sm-left">Periodo de pagamento:</dt>
-        <dd class="col-sm-8">
-            <span id="paymentPeriod_confirmation"></span>
-        </dd>
-
-        <dt class="col-sm-4 text-sm-left">Quantidade de salas:</dt>
-        <dd class="col-sm-8">
-            <span id="qtdRoom_confirmation"></span>
-        </dd>
-
-        <dt class="col-sm-4 text-sm-left">Total a pagar (kz):</dt>
-        <dd class="col-sm-8">
-            <span id="totalPay_confirmation"></span>
-        </dd>
-
-        <dt class="col-sm-4 text-sm-left">Forma de pagamento:</dt>
-        <dd class="col-sm-8">---</dd>
-    </dl>
-    <!-- End Row -->
-</div>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td style="width: 250px; !important"><b>Nome completo:</b></td>
+                <td>
+                    <span id="nomecompleto_confirmacao"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><b>E-mail:</b></td>
+                <td><span id="email_confirmation"></span></td>
+            </tr>
+            <tr>
+                <td><b>Plano selecionado:</b></td>
+                <td><span id="selectedPlan_confirmation"></span></td>
+            </tr>
+            <tr>
+                <td><b>Valor (kz):</b></td>
+                <td><span id="price_confirmation"></span></td>
+            </tr>
+            <tr>
+                <td><b>Periodo de pagamento:</b></td>
+                <td><span id="paymentPeriod_confirmation"></span></td>
+            </tr>
+            <tr>
+                <td><b>Quantidade de salas:</b></td>
+                <td><span id="qtdRoom_confirmation"></span></td>
+            </tr>
+            <tr>
+                <td><b>Total a pagar (kz):</b></td>
+                <td><span id="totalPay_confirmation"></span></td>
+            </tr>
+            <tr>
+                <td><b>Forma de pagamento:</b></td>
+                <td><span id="totalPay_confirmation"></span></td>
+            </tr>
+           
+        </tbody>
+    </table>
 <!-- End Body -->
 
 <!-- Footer -->
@@ -278,7 +301,7 @@
 
     <div class="ml-auto">
         <button id="addUserFinishBtn" type="button" class="btn btn-outline-success">Descarregar comprovativo de subscrição</button>
-        <button id="addUserFinishBtn" type="button" class="btn btn-primary">Confirmar subscrição</button>
+        <button id="addUserFinishBtn" type="submit" class="btn btn-primary">Confirmar subscrição</button>
     </div>
 </div>
 <!-- End Footer -->
@@ -310,12 +333,69 @@
 </div>
 </div>
 <!-- End Row -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Informações de conta</h5>
+                <button type="button" class="btn btn-xs btn-icon btn-ghost-secondary" data-dismiss="modal"
+                    aria-label="Close">
+                    <i class="tio-clear tio-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body table-responsive">
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <th scope="col">Banco</th>
+                        <th scope="col">BENEFICIÁRIO</th>
+                        <th scope="col">Nº Conta</th>
+                        <th scope="col">IBAN</th>
+                        <th scope="col">AGENCIA</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>SOL</th>
+                            <td>LUIOZI EXPRESS, LDA</td>
+                            <td>118423712.10.002</td>
+                            <td>AO06.0044.0000.1842.3712.1028.2</td>
+                            <td>SOBA CAPASSA</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Form Group -->
+                <div class="form-group">
+                    <label>Carregar comprovativo de pagamento</label>
+                    <div class="custom-file">
+                        <input type="file" id="customFileEg1" class="custom-file-input" value="Procurar">
+                        <label class="custom-file-label" for="customFileEg1">Escolher arquivo</label>
+                    </div>
+                </div>
+                <!-- End Form Group -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
 </form>
 <!-- End Step Form -->
 </div>
 <!-- End Content -->
 </main>
+
+
 <script>
+function launchIbanModal()
+{
+    $("#staticBackdrop").modal();
+}
 function setNewPrice(price)
 {
 let month = document.getElementById("plano").value;
@@ -333,7 +413,7 @@ function setConfirmationValue()
     let  c_email = document.getElementById('emailInput').value;
     document.getElementById('email_confirmation').textContent = c_email;
 
-    let c_selectedPlan = document.getElementById('selectedPlanInput').value;
+    let c_selectedPlan = document.getElementById('selectedPlanInput').value == 2 ? "PLANO-PREMIUM" : "PLANO-ESCOLAR";
     document.getElementById('selectedPlan_confirmation').textContent = c_selectedPlan;
 
     let c_price = document.getElementById('priceInput').value;
@@ -360,6 +440,8 @@ function setConfirmationValue()
     // document.getElementById('paymentForm_confirmation').textContent = c_paymentForm;
 
 }
+
+
 
 </script>
 @endsection
