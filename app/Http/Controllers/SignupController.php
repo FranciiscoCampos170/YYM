@@ -26,9 +26,11 @@ class SignupController extends Controller
 
     public function store(SignupStoreRequest $request)
     {
+        try {
         //cadastrar utilizador
             // validar email, tem que ser unico.
-            //se o metodo de pagamento selecionado for transferencia verificar se o campo de arquivo tem valor
+            //se o metodo de pagamento selecionado for transferencia verificar se o campo de arquivo tem valor e armazenar
+            //validar arquivo carregado: precisa ser pdf
         DB::transaction(function () use($request){
             $user = User::create([
                     'name' => $request->get('firstName') ." ". $request->get('lastName'),
@@ -42,15 +44,25 @@ class SignupController extends Controller
                 'total' => $request->get('total_to_pay'),
                 'payment_method' => 1,
                 'total_of_rooms' => $request->get('total_of_rooms'),
-                'file' => 1,
+                'file' => $request->get('file') ?: 'null',
                 'user_id' => $user->id,
                 'state' => "pending",
                 'paid_at' => now()
             ]);
+
+            if ($request->get('userAccountTypeRadio') == 2) {
+                $fileName = time().'_'.$request->file->getClientOriginalName();
+                $filePath = $request->file->move(public_path('comprovativos'), $fileName);
+                
+                $signup->file = $fileName;
+                $signup->save();
+            }
+
+            return redirect()->route('signup.success');
    
         });
-         
-            //cadastrar conta com informacoes de utilizador.
-        return $request;
+        }catch (\Exception $e) {
+            return redirect()->back();
+        }
     }
 }

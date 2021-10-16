@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignupController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +33,13 @@ Route::post('join-free-meeting',[\App\Http\Controllers\FreePlanController::class
 //group for paid
 Route::get('signup/{planId}', [\App\Http\Controllers\SignupController::class, 'signup'])->name('signup');
 Route::post('signup/store', [SignupController::class, 'store'])->name('signup.store');
+Route::get('success/signup', fn() => view('plans.signup.success'))->name('signup.success');
+
+//group for login
+Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::get('/auth/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('/auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
+Route::post('auth/login', [LoginController::class, 'login'])->name('auth.login');
+
+//group for dashboard
+Route::get('dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');

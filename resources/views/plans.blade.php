@@ -105,7 +105,7 @@
                                     <a href="{{route('signup', 2)}}" class="btn btn-lg btn-block btn-primary text-uppercase">Contratar</a>
                                     <div class="text-center pt-3">
                                         <span class="">
-                                            Já tenho uma conta <a href="#">Entrar</a>
+                                            Já tenho uma conta <a href="{{ route('login') }}">Entrar</a>
                                         </span>
                                     </div>
                             </div>
@@ -154,7 +154,7 @@
                                     <a href="{{route('signup', 3)}}" class="btn btn-lg btn-block btn-primary text-uppercase">Contratar</a>
                                     <div class="text-center pt-3">
                                         <span class="">
-                                            Já tenho uma conta <a href="#">Entrar</a>
+                                            Já tenho uma conta <a href="{{ route('login') }}">Entrar</a>
                                         </span>
                                     </div>
 
