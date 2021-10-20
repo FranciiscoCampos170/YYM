@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\SignupController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,4 +43,8 @@ Route::get('/auth/google/callback', [LoginController::class, 'handleGoogleCallba
 Route::post('auth/login', [LoginController::class, 'login'])->name('auth.login');
 
 //group for dashboard
-Route::get('dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
+//group for rooms
+Route::get('rooms', [RoomController::class,'index'])->name('rooms.index');
+Route::post('rooms', [RoomController::class, 'store'])->name('rooms.store');

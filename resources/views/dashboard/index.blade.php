@@ -29,13 +29,13 @@
         <div class="row gx-2 gx-lg-3">
             <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
                 <!-- Card -->
-                <a class="card card-hover-shadow h-100" href="#">
+                <a class="card card-hover-shadow h-100" href="{{ route('rooms.index') }}">
                     <div class="card-body">
                         <h6 class="card-subtitle">Todas Salas criadas</h6>
 
                         <div class="row align-items-center gx-2 mb-1">
                             <div class="col-6">
-                                <span class="card-title h2">1 / 3</span>
+                                <span class="card-title h2"> - / {{ $user->account->total_of_rooms }}</span>
                             </div>
 
                             <div class="col-6">
@@ -80,10 +80,10 @@
                             </div>
                         </div>
                         <!-- End Row -->
+                        <button class="btn btn-sm btn-outline-primary">
+                            Ver todas salas
+                        </button>
 
-                       <button class="btn btn-sm btn-outline-primary">
-                           Ver todas salas
-                       </button>
                         
                     </div>
                 </a>
@@ -286,6 +286,137 @@
         </form>
     </div>
 </div>
+<!-- Create a new user Modal -->
+<div class="modal fade" id="inviteUserModal" tabindex="-1" role="dialog" aria-labelledby="inviteUserModalTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <form class="modal-content">
+      <!-- Header -->
+      <div class="modal-header">
+        <h4 id="inviteUserModalTitle" class="modal-title">Convidar participantes</h4>
+
+        <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary" data-dismiss="modal" aria-label="Close">
+          <i class="tio-clear tio-lg"></i>
+        </button>
+      </div>
+      <!-- End Header -->
+
+      <!-- Body -->
+      <div class="modal-body">
+        <!-- Form Group -->
+        <div class="form-group">
+          <div class="input-group input-group-merge mb-2 mb-sm-0">
+            <div class="input-group-prepend" id="fullName">
+              <span class="input-group-text">
+                <i class="tio-search"></i>
+              </span>
+            </div>
+
+            <input type="text" class="form-control" name="fullName" placeholder="Adicionar e-mail"
+              aria-label="Search name or emails" aria-describedby="fullName">
+
+            <div class="input-group-append input-group-append-last-sm-down-none">
+              
+
+              <a class="btn btn-primary d-none d-sm-block" href="javascript:;">Adicionar</a>
+            </div>
+          </div>
+
+          <a class="btn btn-block btn-primary d-sm-none" href="javascript:;">Adicionar</a>
+        
+        <label for="room" class="mt-3">Selecione a sala:</label>
+          <select name="room" id="room" class="form-control" aria-placeholder="ola" placehoder="ola!">
+            <option value=""></option>
+            <option value="">Reuniao 1</option>
+          </select>
+        </div>
+        <!-- End Form Group -->
+
+        <div class="form-row">
+          <h5 class="col modal-title">Convidados</h5>
+        </div>
+
+        <hr class="mt-2">
+
+        <ul class="list-unstyled list-unstyled-py-4">
+          <!-- List Group Item -->
+          <li>
+            <div class="media">
+              <div class="avatar avatar-sm avatar-circle mr-3">
+                <img class="avatar-img" src="./assets/img/160x160/img10.jpg" alt="Image Description">
+              </div>
+
+              <div class="media-body">
+                <div class="row align-items-center">
+                  <div class="col-sm">
+                    <h5 class="text-body mb-0">Amanda Harvey <i class="tio-verified text-primary" data-toggle="tooltip"
+                        data-placement="top" title="Top endorsed"></i></h5>
+                    <span class="d-block font-size-sm">amanda@example.com</span>
+                  </div>
+
+                  <div class="col-sm">
+                    <!-- Select -->
+                    <div id="inviteUserSelect1"
+                      class="select2-custom select2-custom-sm-right d-sm-flex justify-content-sm-end">
+                      <select class="js-select2-custom custom-select-sm" size="1" style="opacity: 0;"
+                        data-hs-select2-options='{
+                                    "dropdownParent": "#inviteUserSelect1",
+                                    "minimumResultsForSearch": "Infinity",
+                                    "customClass": "custom-select custom-select-sm custom-select-borderless pl-0",
+                                    "dropdownAutoWidth": true,
+                                    "width": true
+                                  }'>
+                        <option value="guest" selected>Guest</option>
+                        <option value="can edit">Can edit</option>
+                        <option value="can comment">Can comment</option>
+                        <option value="full access">Full access</option>
+                        <option value="remove" data-option-template='<span class="text-danger">Remove</span>'>Remove
+                        </option>
+                      </select>
+                    </div>
+                    <!-- End Select -->
+                  </div>
+                </div>
+                <!-- End Row -->
+              </div>
+            </div>
+          </li>
+          <!-- End List Group Item -->
+
+                  </ul>
+      </div>
+      <!-- End Body -->
+
+      <!-- Footer -->
+      <div class="modal-footer justify-content-start">
+        <div class="row align-items-center flex-grow-1 mx-n2">
+          <div class="col-sm-9 mb-2 mb-sm-0">
+            <input type="hidden" id="inviteUserPublicClipboard"
+              value="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/">
+
+            <p class="modal-footer-text">The public share <a href="#">link settings</a>
+              <i class="tio-help-outlined" data-toggle="tooltip" data-placement="top"
+                title="The public share link allows people to view the project without giving access to full collaboration features."></i>
+            </p>
+          </div>
+
+          <div class="col-sm-3 text-sm-right">
+            <a class="js-clipboard btn btn-sm btn-white text-nowrap" href="javascript:;" data-toggle="tooltip"
+              data-placement="top" title="Copy to clipboard!" data-hs-clipboard-options='{
+                    "type": "tooltip",
+                    "successText": "Copied!",
+                    "contentTarget": "#inviteUserPublicClipboard",
+                    "container": "#inviteUserModal"
+                   }'>
+              <i class="tio-link mr-1"></i> Copy link</a>
+          </div>
+        </div>
+      </div>
+      <!-- End Footer -->
+    </form>
+  </div>
+</div>
+<!-- End Create a new user Modal -->
 <!-- End Create a new user Modal -->
 <!-- ========== END SECONDARY CONTENTS ========== -->
 @endsection
