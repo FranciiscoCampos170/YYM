@@ -35,7 +35,7 @@
 
                         <div class="row align-items-center gx-2 mb-1">
                             <div class="col-6">
-                                <span class="card-title h2"> - / {{ $user->account->total_of_rooms }}</span>
+                                <span class="card-title h2">{{$user->rooms->count()}} / {{ $user->account->total_of_rooms }}</span>
                             </div>
 
                             <div class="col-6">
@@ -156,11 +156,12 @@
                 <!-- Card -->
                 <a class="card card-hover-shadow h-100" href="#">
                     <div class="card-body">
-                        <h6 class="card-subtitle">AQUI VEM O PLANO</h6>
+                        <h6 class="card-subtitle">{{$user->account->plan_id == 1 ? "PLANO-PREMIUM" : "PLANO ESCOLAR"}}</h6>
 
                         <div class="row align-items-center gx-2 mb-1">
                             <div class="col-6">
-                                <span class="card-title h2">56.8%</span>
+                             
+                                <span class="card-title h2">{{$percentage}}%</span>
                             </div>
 
                             <div class="col-6">

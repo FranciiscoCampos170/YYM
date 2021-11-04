@@ -18,6 +18,8 @@ class SignupController extends Controller
 
     public function signup($planId)
     {
+        //Plan::create(['name' => "PLANO-PREMIUM", 'price' => 7000]);
+        //Plan::create(['name' => "PLANO-ESCOLAR", 'price' => 5400 ]);
         //validar caso ele meta id errado na url redirectionar para a pagina actual
         $planInfo = Plan::where('id', $planId)->firstOrFail();
         return view('plans.signup.register', compact('planInfo'));

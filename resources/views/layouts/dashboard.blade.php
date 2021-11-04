@@ -32,15 +32,26 @@
     <script src="{{ asset('js/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside.min.js') }}"></script>
     <script src="{{ asset('js/vendor/hs-unfold/dist/hs-unfold.min.js') }}"></script>
     <script src="{{ asset('js/vendor/hs-form-search/dist/hs-form-search.min.js') }}"></script>
-    <script src="{{ asset('js/vendor/select2/dist/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('js/select2/dist/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('js/vendor/chart.js/dist/Chart.min.js') }}"></script>
     <script src="{{ asset('js/vendor/chart.js.extensions/chartjs-extensions.js') }}"></script>
     <script src="{{ asset('js/vendor/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js') }}"></script>
     <script src="{{ asset('js/vendor/daterangepicker/moment.min.js') }}"></script>
     <script src="{{ asset('js/vendor/daterangepicker/daterangepicker.js') }}"></script>
-    <script src="{{ asset('js/vendor/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('js/vendor/datatables.net.extensions/select/select.min.js') }}"></script>
+    <script src="{{ asset('js/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/datatables.net.extensions/select/select.min.js') }}"></script>
     <script src="{{ asset('js/vendor/clipboard/dist/clipboard.min.js') }}"></script>
+
+    <script src="{{asset('js/datatables/media/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('js/datatables.net.extensions/select/select.min.js')}}"></script>
+    <script src="{{asset('js/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('js/datatables.net-buttons/js/buttons.flash.min.js')}}"></script>
+    <script src="{{asset('js/jszip/dist/jszip.min.js')}}"></script>
+    <script src="{{asset('js/pdfmake/build/pdfmake.min.js')}}"></script>
+    <script src="{{asset('js/pdfmake/build/vfs_fonts.js')}}"></script>
+    <script src="{{asset('js/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('js/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
+    <script src="{{asset('js/datatables.net-buttons/js/buttons.colVis.min.js')}}"></script>
     
     
     <!-- JS Front -->
@@ -49,6 +60,10 @@
     <!-- JS Plugins Init. -->
     <script>
         $(document).on('ready', function () {
+         
+          
+            
+      
             // =======================================================
     
     

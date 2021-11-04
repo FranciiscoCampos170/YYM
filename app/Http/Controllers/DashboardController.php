@@ -17,9 +17,19 @@ class DashboardController extends Controller
         //validar o estado, se for pendente exibir apenas mensagem.
 
         $user = User::whereId(auth()->user()->id)
-                           ->with(['account'])
+                           ->with(['account','rooms'])
                            ->firstOrFail();
+                    
+        $roomCreated = $user->rooms->count();
+        $totalOfRoom = $user->account->total_of_rooms;
 
-        return view('dashboard.index', compact('user'));
+        $firstValue = $roomCreated * 20;
+        $secondValue = $totalOfRoom * 20;
+
+        $percentage = $firstValue / $secondValue;
+
+        $percentage = $percentage * 100;
+
+        return view('dashboard.index', compact('user','percentage'));
     }
 }

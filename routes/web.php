@@ -48,3 +48,4 @@ Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.
 //group for rooms
 Route::get('rooms', [RoomController::class,'index'])->name('rooms.index');
 Route::post('rooms', [RoomController::class, 'store'])->name('rooms.store');
+Route::post('rooms/start-meeting', [RoomController::class, 'startMeeting'])->name('rooms.startMeeting');

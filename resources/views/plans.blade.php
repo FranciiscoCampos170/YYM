@@ -102,7 +102,7 @@
                                                     Aprendizagem</del></li>
                                         </ul>
                                     </div>
-                                    <a href="{{route('signup', 2)}}" class="btn btn-lg btn-block btn-primary text-uppercase">Contratar</a>
+                                    <a href="{{route('signup', 1)}}" class="btn btn-lg btn-block btn-primary text-uppercase">Contratar</a>
                                     <div class="text-center pt-3">
                                         <span class="">
                                             Já tenho uma conta <a href="{{ route('login') }}">Entrar</a>
@@ -151,7 +151,7 @@
                                                 Aprendizagem</li>
                                         </ul>
                                     </div>
-                                    <a href="{{route('signup', 3)}}" class="btn btn-lg btn-block btn-primary text-uppercase">Contratar</a>
+                                    <a href="{{route('signup', 2)}}" class="btn btn-lg btn-block btn-primary text-uppercase">Contratar</a>
                                     <div class="text-center pt-3">
                                         <span class="">
                                             Já tenho uma conta <a href="{{ route('login') }}">Entrar</a>

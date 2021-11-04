@@ -23,11 +23,36 @@
 
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                @if(session()->has('success'))
+                 <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    
+                    {{ session()->get('success') }}
+                    
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="tio-clear tio-lg"></i>
+                      </button>
+                  </div>
+                  @elseif(session()->has('error'))
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="tio-warning mt-1 mr-1"></i>
+                    <div class="media-body" role="alert">
+                     {{session()->get('error')}}
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="tio-clear tio-lg"></i>
+                      </button>
+                  </div>
+                @endif
+            </div>
+        </div>
         <!-- End Page Header -->
         <!-- Card -->
         <div class="card">
             <!-- Header -->
             <div class="card-header">
+            
                 <div class="row justify-content-between align-items-center flex-grow-1">
                     <div class="col-sm-6 col-md-4 mb-3 mb-sm-0">
                         <form>
@@ -73,34 +98,25 @@
         
                                 <div id="usersExportDropdown"
                                     class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right">
-                                    <span class="dropdown-header">Options</span>
-                                    <a id="export-copy" class="dropdown-item" href="javascript:;">
+                                    
+                                    
+                                    
+                                    <span class="dropdown-header">Opções de formato</span>
+                                    <a id="export-pdf" class="dropdown-item" href="javascript:;">
                                         <img class="avatar avatar-xss avatar-4by3 mr-2"
-                                            src="@@autopath/assets/svg/illustrations/copy.svg" alt="Image Description">
-                                        Copy
+                                            src="{{asset('svg/brands/pdf.svg')}}" alt="Image Description">
+                                        PDF
                                     </a>
-                                    <a id="export-print" class="dropdown-item" href="javascript:;">
-                                        <img class="avatar avatar-xss avatar-4by3 mr-2"
-                                            src="@@autopath/assets/svg/illustrations/print.svg" alt="Image Description">
-                                        Print
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <span class="dropdown-header">Download options</span>
                                     <a id="export-excel" class="dropdown-item" href="javascript:;">
                                         <img class="avatar avatar-xss avatar-4by3 mr-2"
-                                            src="@@autopath/assets/svg/brands/excel.svg" alt="Image Description">
+                                            src="{{asset('svg/brands/excel.svg')}}" alt="Image Description">
                                         Excel
                                     </a>
                                     <a id="export-csv" class="dropdown-item" href="javascript:;">
                                         <img class="avatar avatar-xss avatar-4by3 mr-2"
-                                            src="@@autopath/assets/svg/components/placeholder-csv-format.svg"
+                                            src="{{asset('svg/components/placeholder-csv-format.svg')}}"
                                             alt="Image Description">
                                         .CSV
-                                    </a>
-                                    <a id="export-pdf" class="dropdown-item" href="javascript:;">
-                                        <img class="avatar avatar-xss avatar-4by3 mr-2"
-                                            src="@@autopath/assets/svg/brands/pdf.svg" alt="Image Description">
-                                        PDF
                                     </a>
                                 </div>
                             </div>
@@ -1027,10 +1043,10 @@
                             </th>
                             <th class="table-column-pl-0">Nome da sala</th>
                             <th>Link da reunião</th>
-                            <th>Copiar link</th>
-                            <th>Agendar</th>
-                            <th>Iniciar</th>
-                            <th></th>
+                            <th class="text-center">Copiar link</th>
+                            <th class="text-center">Agendar</th>
+                            <th class="text-center">Iniciar</th>
+                            <th class="text-center"></th>
                         </tr>
                     </thead>
         
@@ -1047,18 +1063,44 @@
                                 {{ $room->meetingName }}
                             </td>
                             <td>
-                                
+                                <input type="text" class="form-control form-control-sm" name="link" id="{{$room->meetingID}}"
+                                   value="{{URL::to('/'). "/join-free-meeting/" . $room->meetingID}}" readonly>
                             </td>
-                            <td></td>
-                            <td>
-                               
-                            </td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    
+                            <td class="text-center">
+                                <div hidden>
+                                    <input type="text" class="form-control form-control-sm" name="" id="{{$room->meetingID}}"
+                                     >
                                 </div>
+                                <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyToClipboard('{{$room->meetingID}}')">
+                                      <i class="tio-copy"></i>
+                                </button>
                             </td>
-                            <td></td>
+                            <td class="text-center">
+                                <div hidden>
+                                    <input type="text" class="form-control form-control-sm" name="">
+                                </div>
+                                <button type="button" class="btn btn-outline-primary btn-sm">
+                                    <i class="tio-calendar"></i>
+                              </button>
+                            </td>
+                            <td class="text-center">
+                                <form action="{{route('rooms.startMeeting')}}" method="POST">
+                                    @csrf
+                                    <div hidden>
+                                        <input type="text" class="form-control form-control-sm" name="meetingId" id="{{$room->meetingID}}"
+                                        value="{{$room->meetingID}}" >
+                                    </div>
+
+                                   <button type="submit" class="btn btn-outline-primary btn-sm mt-3">
+                                    <i class="tio-play"></i>
+                                </button>
+                            </form>
+                            </td>
+                            <td>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    <i class="tio-edit"></i>
+                                </button>
+                            </td>
                         </tr>  
                         @endforeach              
                     </tbody>
@@ -1165,4 +1207,24 @@
     <!-- End Create a new user Modal -->
     <!-- End Create a new user Modal -->
     <!-- ========== END SECONDARY CONTENTS ========== -->
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+            $('#export-pdf').click(function() {
+          datatable.button('.buttons-pdf').trigger()
+        });
+        })
+    </script>
     @endsection
+
+
+
+    <script>
+        function copyToClipboard(link) {
+            let text = document.getElementById(link);
+            text.select();
+            document.execCommand("copy");
+        }
+    </script>
