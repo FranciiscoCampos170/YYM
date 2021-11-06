@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AccountInfo;
 use App\Models\Room;
+use App\Models\RoomSetting;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -93,5 +94,65 @@ class RoomController extends Controller
                 'password' => $room->moderatorPW //which user role want to join set password here
             ])
         );
+    }
+
+    public function edit($id)
+    {
+        $user = User::whereId(auth()->user()->id)
+        ->with(['account','rooms'])
+        ->firstOrFail();
+
+        $rooms = Room::get();
+
+        if (!$rooms->contains('id', $id)) {
+            return redirect()->route('rooms.index');
+        }
+
+        $room = Room::whereId($id)->with('setting')->firstOrFail();
+        if ($room->user_id != Auth::user()->id) {
+            return redirect()->back();
+        }
+        //return $room;
+        $data = [ 'user' => $user, 'room' => $room];
+        return view('room.edit')->with($data);
+    }
+    public function update(Request $request, $id)
+    {
+
+        try {
+            //code...
+        
+        //tratar no form request
+        //validar form
+        $rooms = Room::get();
+
+        if (!$rooms->contains('id', $id)) {
+            return redirect()->route('rooms.index');
+        }
+
+        $room = Room::whereId($id)->firstOrFail();
+        if ($room->user_id != Auth::user()->id) {
+            return redirect()->back();
+        }
+
+        $room->meetingName = $request->get('room_name');
+        $room->save();
+
+        $setting = RoomSetting::where('room_id', $id)->firstOrFail();
+        $setting->mute_user_participant = $request->get('muted_user');
+        $setting->require_moderator_approval_before_joinig = $request->get('approval_before_joining');
+        $setting->allow_any_user_to_start_this_meeting = $request->get('allow_start_meeting');
+        $setting->all_users_join_as_moderator = $request->get('all_join_as_moderator');
+        $setting->dial_number = $request->get('dial_number');
+        $setting->welcome_message = $request->get('welcome_messege');
+        $setting->logo = $request->get('url_logo');
+        $setting->save();
+
+            return redirect()->back()->with("success","Configurações de sala atualizadas com sucesso");
+        } catch (\Exception $e) {
+            //return $e;
+            return redirect()->back()->with("error","Erro ao atualizar configurações da sala");
+        }
+        
     }
 }

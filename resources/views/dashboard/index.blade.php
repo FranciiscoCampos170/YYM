@@ -203,6 +203,12 @@
                                     </canvas>
                                 </div>
                                 <!-- End Chart -->
+                                 {{--<div class="d-flex align-items-center">
+                                <span class="font-size-sm mr-2">72%</span>
+                                <div class="progress table-progress">
+                                  <div class="progress-bar" role="progressbar" style="width: 12%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                              </div>--}}
                             </div>
                         </div>
                         <!-- End Row -->
@@ -278,12 +284,7 @@
             </div>
         </div>
         <!-- End Stats -->
-
-        
-            <!-- End Body -->
-
-            
-        
+            <!-- End Body -->        
         </form>
     </div>
 </div>
@@ -317,8 +318,6 @@
               aria-label="Search name or emails" aria-describedby="fullName">
 
             <div class="input-group-append input-group-append-last-sm-down-none">
-              
-
               <a class="btn btn-primary d-none d-sm-block" href="javascript:;">Adicionar</a>
             </div>
           </div>
@@ -346,7 +345,6 @@
               <div class="avatar avatar-sm avatar-circle mr-3">
                 <img class="avatar-img" src="./assets/img/160x160/img10.jpg" alt="Image Description">
               </div>
-
               <div class="media-body">
                 <div class="row align-items-center">
                   <div class="col-sm">

@@ -1071,7 +1071,7 @@
                                     <input type="text" class="form-control form-control-sm" name="" id="{{$room->meetingID}}"
                                      >
                                 </div>
-                                <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyToClipboard('{{$room->meetingID}}')">
+                                <button type="button" class="btn btn-sm btn-white mr-2" onclick="copyToClipboard('{{$room->meetingID}}')">
                                       <i class="tio-copy"></i>
                                 </button>
                             </td>
@@ -1079,7 +1079,7 @@
                                 <div hidden>
                                     <input type="text" class="form-control form-control-sm" name="">
                                 </div>
-                                <button type="button" class="btn btn-outline-primary btn-sm">
+                                <button type="button" class="btn btn-sm btn-white mr-2">
                                     <i class="tio-calendar"></i>
                               </button>
                             </td>
@@ -1091,15 +1091,15 @@
                                         value="{{$room->meetingID}}" >
                                     </div>
 
-                                   <button type="submit" class="btn btn-outline-primary btn-sm mt-3">
+                                   <button type="submit" class="btn btn-sm btn-white mt-3">
                                     <i class="tio-play"></i>
                                 </button>
                             </form>
                             </td>
                             <td>
-                                <button class="btn btn-outline-primary btn-sm">
-                                    <i class="tio-edit"></i>
-                                </button>
+                                <a href="{{route('rooms.edit', $room->id)}}" class="btn btn-sm btn-white">
+                                    <i class="tio-settings"></i>
+                                </a>
                             </td>
                         </tr>  
                         @endforeach              

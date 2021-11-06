@@ -27,26 +27,107 @@
             <div class="navbar-vertical-content">
                 <ul class="navbar-nav navbar-nav-lg nav-tabs">
                     <!-- Dashboards -->
-                    <li class="navbar-vertical-aside-has-menu show">
-                        <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle active"
+                    <li class="nav-item">
+                        <a class="js-nav-tooltip-link nav-link"
                             href="{{ route('dashboard.index') }}" title="Dashboards">
                             <i class="tio-home-vs-1-outlined nav-icon"></i>
                             <span
                                 class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
                             Painel de controle
-                        </span>
+                             </span>
                         </a>
 
                         
                     </li>
+                    <li class="nav-item">
+                        <a class="js-nav-tooltip-link nav-link"
+                            href="{{ route('rooms.index') }}" title="Salas">
+                            <i class="tio-dashboard-vs-outlined nav-icon"></i>
+                            <span
+                                class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                            Salas
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="js-nav-tooltip-link nav-link"
+                            href="{{ route('rooms.index') }}" title="Salas">
+                            <i class="tio-calendar nav-icon"></i>
+                            <span
+                                class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                            Agendamentos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="js-nav-tooltip-link nav-link"
+                            href="{{ route('rooms.index') }}" title="Salas">
+                            <i class="tio-play nav-icon"></i>
+                            <span
+                                class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                            Gravações
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="js-nav-tooltip-link nav-link"
+                            href="{{ route('rooms.index') }}" title="Salas">
+                            <i class="tio-clock nav-icon"></i>
+                            <span
+                                class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                            Agendar reunião
+                            </span>
+                        </a>
+                    </li>
                     <!-- End Dashboards -->
 
-                    {{--   
+                      
                         <li class="nav-item">
-                            <small class="nav-subtitle" title="Pages">Pages</small>
+                            <small class="nav-subtitle" title="Pages">DOCUMENTOS</small>
                             <small class="tio-more-horizontal nav-subtitle-replacer"></small>
                         </li>
-                        --}}
+                        <li class="nav-item">
+                            <a class="js-nav-tooltip-link nav-link"
+                                href="{{ route('rooms.index') }}" title="Salas">
+                                <i class="tio-book nav-icon"></i>
+                                <span
+                                class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                Termos de contrato
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="js-nav-tooltip-link nav-link"
+                                href="{{ route('rooms.index') }}" title="Salas">
+                                <i class="tio-book-opened nav-icon nav-icon"></i>
+                                <span
+                                class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                Manual do usuario
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="js-nav-tooltip-link nav-link"
+                                href="{{ route('rooms.index') }}" title="Salas">
+                                <i class="tio-pdf-icon nav-icon"></i>
+                                <span
+                                class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                Fatura da licença
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="js-nav-tooltip-link nav-link"
+                                href="{{ route('rooms.index') }}" title="Salas">
+                                <i class="tio-room nav-icon"></i>
+                                <span
+                                class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                Suporte técnico
+                                </span>
+                            </a>
+                        </li>
+                        
                 </ul>
             </div>
             <!-- End Content -->

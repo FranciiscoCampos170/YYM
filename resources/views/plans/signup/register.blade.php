@@ -20,7 +20,7 @@
                 "endSelector": "#addUserFinishBtn",
                 "isValidate": false
                 }' data-select2-id="267" action="{{ route('signup.store') }}" method="POST"
-            enctype="multipart/form-data">
+            enctype="multipart/form-data" id="submitItem">
             @csrf
             <div class="row justify-content-lg-center" data-select2-id="266">
                 <div class="col-lg-8" data-select2-id="265">
@@ -322,6 +322,7 @@
 
                                     </tbody>
                                 </table>
+                              
                                 <!-- End Body -->
 
                                 <!-- Footer -->
@@ -334,9 +335,9 @@
                                     </button>
 
                                     <div class="ml-auto">
-                                        <button id="addUserFinishBtn" type="button"
+                                        {{--<button id="downloadReceipt" type="submit"
                                             class="btn btn-outline-success">Descarregar comprovativo de
-                                            subscrição</button>
+                                            subscrição</button>--}}
                                         <button id="addUserFinishBtn" type="submit" class="btn btn-primary">Confirmar
                                             subscrição</button>
                                     </div>
@@ -397,8 +398,40 @@
     <!-- End Content -->
 </main>
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.js">
+  
+</script>
 <script>
+    $(function() {
+        $("#downloadReceipt").on('submit',function(e){
+            //alert("ol");
+           
+               e.preventDefault();
+               $.ajax({
+                      type:'POST',
+                      url: '{{route("download.receipt")}}',
+                      headers: {
+                           'X-CSRF-Token': '{{ csrf_token() }}',
+                       },
+                       xhrFields: {
+                           responseType: 'blob'
+                        },data: $("#submitItem").serialize(),
+                      success:function(data) {
+                       
+                          var blob = new Blob([data]);
+                           var link = document.createElement('a');
+                           link.href= window.URL.createObjectURL(blob);
+                           link.download = "ex.pdf";
+                           link.click();
+                          //alert(data);
+                         //$("#msg").html(data.msg);
+                      }
+                   });
+           });
+               
+        
+    })
+    
     function getFileName()
 {
     fileName = document.getElementById("customFileEg1").value;

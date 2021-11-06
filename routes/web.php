@@ -35,6 +35,7 @@ Route::post('join-free-meeting',[\App\Http\Controllers\FreePlanController::class
 Route::get('signup/{planId}', [\App\Http\Controllers\SignupController::class, 'signup'])->name('signup');
 Route::post('signup/store', [SignupController::class, 'store'])->name('signup.store');
 Route::get('success/signup', fn() => view('plans.signup.success'))->name('signup.success');
+Route::post('signup/generate-receipt', [\App\Http\Controllers\SignupController::class, 'generateReceipt'])->name('download.receipt');
 
 //group for login
 Route::get('login', [LoginController::class, 'index'])->name('login');
@@ -49,3 +50,5 @@ Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.
 Route::get('rooms', [RoomController::class,'index'])->name('rooms.index');
 Route::post('rooms', [RoomController::class, 'store'])->name('rooms.store');
 Route::post('rooms/start-meeting', [RoomController::class, 'startMeeting'])->name('rooms.startMeeting');
+Route::get('rooms/edit/{id}', [RoomController::class, 'edit'])->name('rooms.edit');
+Route::put('rooms/{id}', [RoomController::class, 'update'])->name('rooms.update');

@@ -11,6 +11,7 @@
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="{{asset('css/icon-set/style.css')}}">
     <link rel="stylesheet" href="{{asset('/css/select2/dist/css/select2.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css">
 
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="{{asset('css/theme.min.css')}}">

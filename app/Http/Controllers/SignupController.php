@@ -10,6 +10,11 @@ use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Exports\PaymentReceipt;
+use Maatwebsite\Excel\Excel;
+use Maatwebsite\Excel\Facades;
+use Maatwebsite\Excel\Facades\Excel as FacadesExcel;
+
 
 class SignupController extends Controller
 {
@@ -66,5 +71,14 @@ class SignupController extends Controller
         }catch (\Exception $e) {
             return redirect()->back();
         }
+    }
+
+    public function generateReceipt(Request $request)
+    {
+        //return response()->json($request);
+         return FacadesExcel::download(new PaymentReceipt, 'xxx.pdf');
+            //return response()->json($pdf);
+        //return response()->json("ola!");
+        
     }
 }
